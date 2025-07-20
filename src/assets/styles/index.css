@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #ff6f00;
+  --primary-light: #000000;
+  --primary-dark: #c43e00;
+  --secondary-color: #2c3e50;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --bg-dark: #1a1a1a;
+  --bg-light: #333333;
+  --bg-lighter: #444444;
+  /* Spacing */
+  --section-padding: 100px 0;
+  --element-margin: 2rem;
+  /* Animations */
+  --transition-fast: 0.8s ease;
+  --transition-medium: 0.9s ease;
+  --transition-slow: 0.8s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; /* 1rem = 10px */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+  font-size: 1.6rem;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+section {
+  padding: var(--section-padding);
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section > .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.skills {
+  padding-top: 2rem !important;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-light);
+  transition: color var(--transition-slow);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  border-radius: 5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 1.4rem;
+  margin-right: 1.5rem;
+  margin-top: 2rem;
+  border: none;
+  outline: none;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: #000000;
+  font-weight: bold !important;
+}
+
+.primary-btn:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--primary-color);
+  font-weight: bold !important;
+}
+
+.secondary-btn:hover {
+  background-color: var(--primary-color);
+  color: black;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+.highlight-c {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+.section-header h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.underline {
+  width: 8rem;
+  height: 0.4rem;
+  background-color: var(--primary-color);
+  margin: 0 auto;
+  position: relative;
+}
+
+.underline::before {
+  content: '';
+  position: absolute;
+  width: 4rem;
+  height: 0.4rem;
+  background-color: var(--primary-color);
+  top: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 0.4rem;
+  background-color: var(--primary-color);
+  top: -1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+section,
+header,
+.new,
+footer,
+main,
+nav {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Utility and global classes only below this line */

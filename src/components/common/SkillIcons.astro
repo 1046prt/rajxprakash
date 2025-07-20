@@ -1,0 +1,77 @@
+---
+import '@/assets/styles/skills.css';
+import html5Icon from '@/assets/icons/html5.svg';
+import css3Icon from '@/assets/icons/css3.svg';
+import javascriptIcon from '@/assets/icons/javascript.svg';
+import typescriptIcon from '@/assets/icons/typescript.svg';
+import reactIcon from '@/assets/icons/react.svg';
+import astroIcon from '@/assets/icons/astro.svg';
+import tailwindIcon from '@/assets/icons/tailwind.svg';
+import nodejsIcon from '@/assets/icons/nodejs.svg';
+import jsonIcon from '@/assets/icons/json.svg';
+import pythonIcon from '@/assets/icons/python.svg';
+import daIcon from '@/assets/icons/da.svg';
+import mlIcon from '@/assets/icons/ml.svg';
+import dvIcon from '@/assets/icons/dv.svg';
+import rIcon from '@/assets/icons/r.svg';
+import javaIcon from '@/assets/icons/java.svg';
+import cIcon from '@/assets/icons/c.svg';
+import phpIcon from '@/assets/icons/php.svg';
+import mongodbIcon from '@/assets/icons/mongodb.svg';
+import mysqlIcon from '@/assets/icons/mysql.svg';
+import gitIcon from '@/assets/icons/git.svg';
+import githubIcon from '@/assets/icons/github.svg';
+import chromeIcon from '@/assets/icons/chrome.svg';
+import vscodeIcon from '@/assets/icons/vscode.svg';
+import figmaIcon from '@/assets/icons/figma.svg';
+import canvaIcon from '@/assets/icons/canva.svg';
+
+export const skillIcons = {
+  HTML5: html5Icon,
+  CSS3: css3Icon,
+  JavaScript: javascriptIcon,
+  TypeScript: typescriptIcon,
+  React: reactIcon,
+  Astro: astroIcon,
+  'Tailwind CSS': tailwindIcon,
+  'Node.js': nodejsIcon,
+  JSON: jsonIcon,
+  Python: pythonIcon,
+  'Data Analysis': daIcon,
+  'Machine Learning': mlIcon,
+  'Data Visualization': dvIcon,
+  R: rIcon,
+  Java: javaIcon,
+  C: cIcon,
+  php: phpIcon,
+  MongoDB: mongodbIcon,
+  MySQL: mysqlIcon,
+  Git: gitIcon,
+  GitHub: githubIcon,
+  'Chrome DevTools': chromeIcon,
+  VSCode: vscodeIcon,
+  Figma: figmaIcon,
+  Canva: canvaIcon,
+};
+---
+
+<div class="skills-marquee">
+  <div class="skills-track">
+    {
+      Object.entries(skillIcons).map(([name, icon]) => (
+        <div class="skill-marquee-card">
+          <img src={String(icon.src ?? icon)} alt={name} class="skill-marquee-icon" />
+          <span class="skill-marquee-label">{name}</span>
+        </div>
+      ))
+    }
+    {
+      Object.entries(skillIcons).map(([name, icon]) => (
+        <div class="skill-marquee-card">
+          <img src={String(icon.src ?? icon)} alt={name} class="skill-marquee-icon" />
+          <span class="skill-marquee-label">{name}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>

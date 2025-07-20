@@ -1,0 +1,46 @@
+---
+import '@/assets/styles/navbar.css';
+import { LINKS } from '@/lib/constants';
+const links = [
+  { href: LINKS.home, text: 'Home' },
+  { href: LINKS.about, text: 'About' },
+  { href: LINKS.skills, text: 'Skills' },
+  { href: LINKS.projects, text: 'Projects' },
+  { href: LINKS.contact, text: 'Contact' },
+  { href: LINKS.blog, text: 'Blog' },
+];
+
+// Get current page path for active link highlighting
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navbar">
+  <div class="logo">
+    <span>PR</span>
+  </div>
+
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </button>
+
+  <ul class="nav-links" id="nav-links">
+    {
+      links.map((link) => {
+        const isActive =
+          (currentPath === '/' && link.href === '/') ||
+          (currentPath.startsWith('/blog') && link.href === '/blog') ||
+          (currentPath !== '/' && currentPath !== '/blog' && link.href.startsWith('#'));
+
+        return (
+          <li>
+            <a href={link.href} class={isActive ? 'active' : ''}>
+              {link.text}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

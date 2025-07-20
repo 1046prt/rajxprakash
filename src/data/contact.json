@@ -1,0 +1,53 @@
+{
+  "title": "Contact",
+  "highlight": "Me",
+  "contactInfo": [
+    {
+      "icon": "fas fa-envelope",
+      "title": "Email",
+      "value": "rajprakash1046@gmail.com",
+      "link": "mailto:rajprakash1046@gmail.com",
+      "type": "email"
+    },
+    {
+      "icon": "fas fa-phone",
+      "title": "Phone",
+      "value": "+91 9508015377",
+      "link": "tel:+919508015377",
+      "type": "phone"
+    },
+    {
+      "icon": "fas fa-map-marker-alt",
+      "title": "Location",
+      "value": "Jaipur, India",
+      "link": "https://www.google.com/maps?q=Jaipur,+India",
+      "type": "location"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Email",
+      "url": "mailto:rajprakash1046@gmail.com",
+      "icon": "fa fa-envelope",
+      "type": "email"
+    },
+    {
+      "name": "WhatsApp",
+      "url": "https://wa.me/919508015377?text=Hi%20Prakash",
+      "icon": "fab fa-whatsapp",
+      "type": "whatsapp"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/1046prt/",
+      "icon": "fab fa-instagram",
+      "type": "instagram"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://x.com/1046prt",
+      "icon": "fab fa-twitter",
+      "type": "twitter"
+    }
+  ]
+}

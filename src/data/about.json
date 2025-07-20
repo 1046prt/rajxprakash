@@ -1,0 +1,25 @@
+{
+  "title": "About",
+  "highlight": "Me",
+  "image": {
+    "src": "/assets/images/Prakash_Raj.jpg",
+    "alt": "Prakash Raj"
+  },
+  "intro": "Hi there! I'm Prakash Raj, a passionate web developer and data scientist based in Jaipur.",
+  "description": [
+    "Currently pursuing my Bachelor's in Data Science and Artificial Intelligence at ICFAI University Jaipur. I love creating stunning websites and solving complex data problems.",
+    "With hands-on experience in HTML, CSS, JavaScript, Python, and various data science tools, I strive to create solutions that are both visually appealing and technically sound."
+  ],
+  "details": [
+    {
+      "icon": "fas fa-graduation-cap",
+      "label": "B.Tech in Data Science & AI, 2027",
+      "link": "https://www.iujaipur.edu.in/",
+      "type": "education"
+    }
+  ],
+  "resume": {
+    "text": "Download Resume",
+    "link": "https://drive.google.com/file/d/1_sRECd19TUycxLQmA_pVV3DydlgF_Na9/view?usp=sharing"
+  }
+}

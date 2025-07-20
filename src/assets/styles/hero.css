@@ -1,0 +1,188 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.hero-content {
+  animation: fadeIn 1s ease;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.name {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.typing {
+  color: #ff6f00;
+}
+
+.typing-wrapper {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.typing::after {
+  content: '|';
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.social-links {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--bg-lighter);
+  margin: 0 1rem;
+  transition: all var(--transition-fast);
+}
+
+.social-icon i {
+  font-size: 1.8rem;
+  color: var(--text-light);
+  transition: color var(--transition-fast);
+}
+
+.social-icon:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.social-icon:hover i {
+  color: var(--text-dark);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounce 2s infinite;
+}
+
+.scroll-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.scroll-arrow i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons .btn {
+  min-width: 160px;
+  padding-left: 2.8rem;
+  padding-right: 2.8rem;
+  text-align: center;
+  margin: 0;
+  height: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .cta-buttons {
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .social-links {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+  .social-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 0.8rem;
+  }
+  .scroll-indicator {
+    bottom: 1.5rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .cta-buttons .btn {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-links {
+    margin-bottom: 6rem;
+  }
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+}

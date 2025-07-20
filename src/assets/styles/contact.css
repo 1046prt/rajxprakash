@@ -1,0 +1,151 @@
+.contact {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 100px 0 0 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.contact-info {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  background-color: var(--bg-lighter);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  flex: 1;
+}
+
+.contact-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.contact-text p a {
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+
+.contact-text p a:hover {
+  color: #e16811;
+}
+
+.social-links-large {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 700px;
+}
+
+.social-icon-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: var(--bg-lighter);
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.social-icon-large i {
+  font-size: 2rem;
+  color: var(--text-light);
+}
+
+.social-icon-large:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.social-icon-large:hover i {
+  color: var(--text-dark);
+}
+
+@media screen and (max-width: 992px) {
+  .contact-info {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-content {
+    padding: 0 1.5rem;
+  }
+  .contact-info {
+    max-width: 100%;
+  }
+  .social-links-large {
+    gap: 1.5rem;
+  }
+  .social-icon-large {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+  }
+  .contact-text {
+    width: 100%;
+    text-align: center;
+  }
+  .social-links-large {
+    gap: 1rem;
+  }
+  .social-icon-large {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .social-icon-large i {
+    font-size: 1.8rem;
+  }
+}

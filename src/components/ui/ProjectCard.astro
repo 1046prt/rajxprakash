@@ -1,0 +1,40 @@
+---
+const { project } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-image">
+    <img src={project.image} alt={project.title} loading="lazy" />
+    <div class="project-links-overlay">
+      {
+        project.links?.live && (
+          <a
+            href={project.links.live}
+            class="project-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live
+          </a>
+        )
+      }
+      {
+        project.links?.github && (
+          <a
+            href={project.links.github}
+            class="project-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        )
+      }
+    </div>
+  </div>
+  <h3 class="project-title">{project.title}</h3>
+  <p class="project-description">{project.description}</p>
+  <div class="project-tags">
+    {project.tags && project.tags.map((tag) => <span>{tag}</span>)}
+  </div>
+</article>

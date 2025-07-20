@@ -1,0 +1,42 @@
+{
+  "name": "Prakash Raj",
+  "greeting": "Hello!",
+  "title": "I'm",
+  "typingWords": ["Web Developer", "Data Scientist", "Freelancer", "ML Enthusiast"],
+  "buttons": {
+    "hireMe": {
+      "text": "Hire Me",
+      "link": "#contact"
+    },
+    "projects": {
+      "text": "My Projects",
+      "link": "#projects"
+    },
+    "blog": {
+      "text": "Read My Blog",
+      "link": "/blog"
+    }
+  },
+  "socialLinks": {
+    "linkedin": {
+      "url": "https://linkedin.com/in/1046prt",
+      "icon": "fab fa-linkedin-in"
+    },
+    "github": {
+      "url": "https://github.com/1046prt",
+      "icon": "fab fa-github"
+    },
+    "twitter": {
+      "url": "https://x.com/1046prt",
+      "icon": "fab fa-twitter"
+    },
+    "kaggle": {
+      "url": "https://www.kaggle.com/prt1046",
+      "icon": "fab fa-kaggle"
+    }
+  },
+  "scrollIndicator": {
+    "text": "Scroll Down",
+    "icon": "fas fa-chevron-down"
+  }
+}

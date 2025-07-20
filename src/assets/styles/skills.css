@@ -1,0 +1,117 @@
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-category {
+  width: 100%;
+}
+
+.skills-category h3 {
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Marquee effect for skills */
+.skills-marquee {
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  left: 0;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  background: #222 !important; /* TEMP: debug background */
+  z-index: 10;
+  padding: 1rem 0;
+}
+
+.skills-track {
+  display: flex;
+  width: max-content;
+  min-width: 100vw;
+  animation: marquee 40s linear infinite;
+  align-items: center;
+}
+
+.skill-marquee-icon {
+  display: inline-block;
+  margin: 0;
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+}
+
+/* Marquee card style for each icon */
+.skill-marquee-card {
+  background-color: var(--bg-lighter);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid var(--primary-color);
+  box-shadow:
+    0 0 2px 0.5px var(--primary-color),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+  transition:
+    box-shadow 0.3s,
+    border-color 0.3s,
+    transform 0.2s;
+  width: 120px;
+  height: 100px;
+  min-width: 120px;
+  min-height: 100px;
+  max-width: 120px;
+  max-height: 100px;
+}
+.skill-marquee-card:hover {
+  transform: scale(1.07);
+}
+
+.skill-marquee-label {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: clamp(0.75rem, 1vw, 1rem);
+  color: var(--primary-color);
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail {
+    justify-content: center;
+  }
+}

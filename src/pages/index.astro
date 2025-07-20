@@ -1,0 +1,439 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import Particles from '@/components/common/Particles.astro';
+import { LINKS } from '@/lib/constants';
+import '@/assets/styles/index.css';
+import '../assets/styles/hero.css';
+import '../assets/styles/about.css';
+import '../assets/styles/skills.css';
+import '../assets/styles/projects.css';
+import '../assets/styles/contact.css';
+
+// Import JSON data
+import heroData from '@/data/hero.json';
+import aboutData from '@/data/about.json';
+import skillsData from '@/data/skills.json';
+import projectsData from '@/data/projects.json';
+import contactData from '@/data/contact.json';
+
+import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
+---
+
+<MainLayout title="Prakash Raj | Developer’s Playground">
+  {/* Animated Background */}
+  <Particles />
+  {/* Navigation is handled by MainLayout's Navbar */}
+
+  {/* Hero Section */}
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="greeting">{heroData.greeting}</h1>
+        <h2 class="name">{heroData.title} <span class="highlight">{heroData.name}</span></h2>
+        <div class="typing-wrapper">
+          <p>
+            I'm a <span class="typing" data-words={JSON.stringify(heroData.typingWords)}></span>
+          </p>
+        </div>
+        <div class="cta-buttons">
+          {
+            heroData.buttons?.hireMe && (
+              <a href={heroData.buttons.hireMe.link} class="btn primary-btn">
+                {heroData.buttons.hireMe.text}
+              </a>
+            )
+          }
+          {
+            heroData.buttons?.projects && (
+              <a href={heroData.buttons.projects.link} class="btn secondary-btn">
+                {heroData.buttons.projects.text}
+              </a>
+            )
+          }
+        </div>
+        <div class="social-links">
+          {
+            heroData.socialLinks &&
+              Object.entries(heroData.socialLinks).map(([key, social]) => (
+                <a href={social.url} target="_blank" class="social-icon">
+                  <i class={social.icon} />
+                </a>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+    {
+      heroData.scrollIndicator && (
+        <div class="scroll-indicator">
+          <span class="scroll-text">{heroData.scrollIndicator.text}</span>
+          <div class="scroll-arrow">
+            <i class={heroData.scrollIndicator.icon} />
+          </div>
+        </div>
+      )
+    }
+  </section>
+
+  {/* About Section */}
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>{aboutData.title} <span class="highlight">{aboutData.highlight}</span></h2>
+        <div class="underline"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <div class="image-wrapper">
+            <div class="image-outline"></div>
+            <div class="image-placeholder">
+              <img src={aboutData.image.src} alt={aboutData.image.alt} class="profile-image" />
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="intro">{aboutData.intro}</p>
+          {aboutData.description.map((desc) => <p>{desc}</p>)}
+          {
+            aboutData.details && (
+              <div class="about-details">
+                {aboutData.details.map((detail) => (
+                  <div class="detail">
+                    <a href={detail.link} target="_blank">
+                      <i class={detail.icon} />
+                    </a>
+                    <span>
+                      <a href={detail.link} target="_blank">
+                        {detail.label}
+                      </a>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )
+          }
+          {
+            aboutData.resume && (
+              <a href={aboutData.resume.link} target="_blank" class="btn primary-btn">
+                {aboutData.resume.text}
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Skills Section */}
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2>{skillsData.title} <span class="highlight">{skillsData.highlight}</span></h2>
+        <div class="underline"></div>
+      </div>
+      {/* Marquee Skill Icons */}
+      <SkillIcons />
+    </div>
+  </section>
+
+  {/* Projects Section */}
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>{projectsData.title} <span class="highlight">{projectsData.highlight}</span></h2>
+        <div class="underline"></div>
+      </div>
+      <div class="project-filters">
+        {
+          projectsData.filters.map((filter) => (
+            <button
+              class={`filter-btn ${filter.id === 'all' ? 'active' : ''}`}
+              data-filter={filter.id}
+            >
+              {filter.text}
+            </button>
+          ))
+        }
+      </div>
+      <div class="projects-container">
+        {
+          projectsData.projects.map((project) => (
+            <div class="project-card" data-category={project.category}>
+              <div class="project-image">
+                {/* <img src={project.image} alt={project.title}> */}
+                <div class="project-overlay">
+                  <div class="project-links">
+                    {project.links?.live && (
+                      <a href={project.links.live} target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt" />
+                      </a>
+                    )}
+                    {project.links?.github && (
+                      <a href={project.links.github} target="_blank" class="project-link">
+                        <i class="fab fa-github" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3 class="ptitle">{project.title}</h3>
+                <p>{project.description}</p>
+                <div class="project-tags">
+                  {project.tags.map((tag) => (
+                    <span>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* Contact Section */}
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>{contactData.title} <span class="highlight">{contactData.highlight}</span></h2>
+        <div class="underline"></div>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          {
+            contactData.contactInfo.map((contact) => (
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class={contact.icon} />
+                </div>
+                <div class="contact-text">
+                  <h3>{contact.title}</h3>
+                  <p>
+                    <a href={contact.link} target="_blank">
+                      {contact.value}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+          <div class="social-links-large">
+            {
+              contactData.socialLinks.map((social) => (
+                <a href={social.url} target="_blank" class="social-icon-large">
+                  <i class={social.icon} aria-hidden="true" />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Footer is handled by MainLayout's Footer */}
+  <script type="text/javascript" client:load>
+    // ===== NAVBAR FUNCTIONALITY =====
+    function initNavbar() {
+      const navbar = document.querySelector('.navbar');
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      const navItems = document.querySelectorAll('.nav-links li a');
+      if (!menuToggle || !navLinks) return;
+      menuToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+      navItems.forEach((item) => {
+        item.addEventListener('click', function () {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+        });
+      });
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        updateActiveNavLink();
+      });
+      function updateActiveNavLink() {
+        const sections = document.querySelectorAll('section');
+        const scrollPosition = window.scrollY + 100;
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navItems.forEach((link) => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+    }
+
+    // ===== TYPING EFFECT =====
+    function initTypingEffect() {
+      const typingElement = document.querySelector('.typing');
+      if (!typingElement) {
+        return;
+      }
+
+      // Define words directly for now to test
+      const words = ['Web Developer', 'Data Scientist', 'Freelancer', 'ML Enthusiast'];
+
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typeSpeed = 100;
+
+      function typeEffect() {
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+          typingElement.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          typeSpeed = 50;
+        } else {
+          typingElement.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          typeSpeed = 150;
+        }
+
+        if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          typeSpeed = 1000;
+        }
+
+        if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          typeSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typeSpeed);
+      }
+
+      // Start typing effect immediately
+      typeEffect();
+    }
+
+    // ===== SCROLL ANIMATIONS =====
+    function initScrollAnimations() {
+      const elements = document.querySelectorAll(
+        '.about-content, .skills-category, .project-card, .contact-content'
+      );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      elements.forEach((element) => {
+        observer.observe(element);
+      });
+      const style = document.createElement('style');
+      style.textContent = `
+        .about-content, .skills-category, .project-card, .contact-content {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
+      document.head.appendChild(style);
+    }
+
+    // ===== PROJECT FILTERS =====
+    function initProjectFilters() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+          filterButtons.forEach((btn) => btn.classList.remove('active'));
+          this.classList.add('active');
+          const filterValue = this.getAttribute('data-filter');
+          projectCards.forEach((card) => {
+            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'scale(0.8)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+    }
+
+    // ===== SCROLL INDICATOR =====
+    function initScrollIndicator() {
+      const scrollIndicator = document.querySelector('.scroll-indicator');
+      if (!scrollIndicator) return;
+      scrollIndicator.addEventListener('click', function () {
+        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      initNavbar();
+      initTypingEffect();
+      initScrollAnimations();
+      initProjectFilters();
+      initScrollIndicator();
+    });
+
+    // ===== DEVELOPER TOOL BLOCKER =====
+    document.onkeydown = function (e) {
+      const key = e.key.toUpperCase();
+      if (key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(key)) {
+        e.preventDefault();
+        return false;
+      }
+      if (e.ctrlKey && key === 'U') {
+        e.preventDefault();
+        return false;
+      }
+      if (e.ctrlKey && key === 'S') {
+        e.preventDefault();
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && key === 'C') {
+        e.preventDefault();
+        return false;
+      }
+      document.oncontextmenu = function (e) {
+        e.preventDefault();
+        return false;
+      };
+      return true;
+    };
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  </script>
+</MainLayout>

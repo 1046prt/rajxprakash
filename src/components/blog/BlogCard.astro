@@ -1,0 +1,47 @@
+---
+import '@/assets/styles/blog/blog-card.css';
+
+const { blog, url, isFeatured = false } = Astro.props;
+---
+
+<article class={`blog-card ${isFeatured ? 'featured-post' : ''}`}>
+  {isFeatured && <div class="featured-badge">Latest Post</div>}
+  <div class="blog-image-wrapper">
+    <img
+      src={blog.data.image || '/assets/blog/default.jpg'}
+      alt={blog.data.title}
+      class="blog-image"
+    />
+    <div class="image-overlay"></div>
+  </div>
+  <div class="blog-content">
+    <div class="blog-meta">
+      <time class="blog-date">
+        {
+          new Date(blog.data.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })
+        }
+      </time>
+    </div>
+    <h2 class="blog-title">
+      <a href={url}>{blog.data.title}</a>
+    </h2>
+    <p class="blog-excerpt">{blog.data.excerpt}</p>
+    <a href={url} class="read-more">
+      Read Article
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+</article>

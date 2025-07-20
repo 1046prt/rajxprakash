@@ -1,0 +1,50 @@
+{
+  "title": "My",
+  "highlight": "Skills",
+  "categories": [
+    {
+      "name": "Web Development",
+      "skills": [
+        { "name": "HTML5", "icon": "fab fa-html5", "iconSvg": "html5.svg" },
+        { "name": "CSS3", "icon": "fab fa-css3-alt", "iconSvg": "css3.svg" },
+        { "name": "JavaScript", "icon": "fab fa-js", "iconSvg": "javascript.svg" },
+        { "name": "TypeScript", "icon": "fab fa-js-square", "iconSvg": "typescript.svg" },
+        { "name": "JSON", "icon": "fas fa-file-code", "iconSvg": "json.svg" },
+        { "name": "Astro", "icon": "fas fa-code", "iconSvg": "astro.svg" },
+        { "name": "React", "icon": "fab fa-react", "iconSvg": "react.svg" },
+        { "name": "Tailwind CSS", "icon": "fab fa-css3-alt", "iconSvg": "tailwind.svg" }
+      ]
+    },
+    {
+      "name": "Data Science",
+      "skills": [
+        { "name": "Python", "icon": "fab fa-python", "iconSvg": "python.svg" },
+        { "name": "Data Analysis", "icon": "fas fa-chart-bar", "iconSvg": "da.svg" },
+        { "name": "Machine Learning", "icon": "fas fa-brain", "iconSvg": "ml.svg" },
+        { "name": "Data Visualization", "icon": "fas fa-chart-line", "iconSvg": "dv.svg" }
+      ]
+    },
+    {
+      "name": "Programming Language",
+      "skills": [
+        { "name": "Java", "icon": "fab fa-java", "iconSvg": "java.svg" },
+        { "name": "C", "icon": "fas fa-c", "iconSvg": "c.svg" },
+        { "name": "R", "icon": "fas fa-r", "iconSvg": "r.svg" },
+        { "name": "php", "icon": "fas fa-code", "iconSvg": "php.svg" }
+      ]
+    },
+    {
+      "name": "Tools & Platforms",
+      "skills": [
+        { "name": "MongoDB", "icon": "fas fa-database", "iconSvg": "mongodb.svg" },
+        { "name": "MySQL", "icon": "fas fa-database", "iconSvg": "mysql.svg" },
+        { "name": "Git", "icon": "fab fa-git", "iconSvg": "git.svg" },
+        { "name": "GitHub", "icon": "fab fa-github", "iconSvg": "github.svg" },
+        { "name": "Chrome DevTools", "icon": "fab fa-chrome", "iconSvg": "chrome.svg" },
+        { "name": "VSCode", "icon": "fas fa-code", "iconSvg": "vscode.svg" },
+        { "name": "Figma", "icon": "fab fa-figma", "iconSvg": "figma.svg" },
+        { "name": "Canva", "icon": "fas fa-paint-brush", "iconSvg": "canva.svg" }
+      ]
+    }
+  ]
+}

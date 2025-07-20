@@ -1,0 +1,43 @@
+---
+import '@/assets/styles/projects.css';
+import ProjectCard from '@/components/ui/ProjectCard.astro';
+import projectsData from '@/data/projects.json';
+---
+
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2>My <span class="highlight">Projects</span></h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web Development</button>
+      <button class="filter-btn" data-filter="ml">Machine Learning</button>
+    </div>
+
+    <div id="projects-container" class="projects-container">
+      {projectsData.projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const projectSection = document.getElementById('projects');
+    const projectGrid = document.getElementById('projects-container');
+    if (!projectSection || !projectGrid) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          projectGrid.classList.add('minimized');
+        } else {
+          projectGrid.classList.remove('minimized');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(projectSection);
+  });
+</script>

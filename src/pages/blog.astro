@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '@/layouts/MainLayout.astro';
+import '@/assets/styles/index.css';
+import '../assets/styles/blog.css';
+
+const blogs = await getCollection('blog');
+// Sort by date (newest first)
+const sortedBlogs = blogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+---
+
+<MainLayout title="Blog - My Tech Journey">
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>My Blog <span class="highlight">Journey</span></h2>
+        <div class="underline"></div>
+      </div>
+
+      <div class="blog-intro">
+        <p class="blog-subtitle">
+          Exploring the world of web development, sharing insights, and documenting my journey in
+          technology.
+        </p>
+        <div class="blog-stats">
+          <div class="stat-item">
+            <span class="stat-number">{sortedBlogs.length}</span>
+            <span class="stat-label">Articles</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Ideas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">☕</span>
+            <span class="stat-label">Coffee</span>
+          </div>
+        </div>
+      </div>
+
+      <main class="blog-main">
+        {
+          sortedBlogs.length > 0 ? (
+            <div class="blog-grid">
+              {sortedBlogs.map((blog, index) => {
+                const url = `/blog/${blog.slug}`;
+                const isFeatured = index === 0;
+
+                return (
+                  <article class={`blog-card ${isFeatured ? 'featured-post' : ''}`}>
+                    {isFeatured && <div class="featured-badge">Latest Post</div>}
+                    <div class="blog-image-wrapper">
+                      <img
+                        src={blog.data.image || '/assets/blog/default.jpg'}
+                        alt={blog.data.title}
+                        class="blog-image"
+                      />
+                      <div class="image-overlay" />
+                    </div>
+                    <div class="blog-content">
+                      <div class="blog-meta">
+                        <time class="blog-date">
+                          {new Date(blog.data.date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                          })}
+                        </time>
+                      </div>
+                      <h3 class="blog-card-title">
+                        <a href={url}>{blog.data.title}</a>
+                      </h3>
+                      <p class="blog-excerpt">{blog.data.excerpt}</p>
+                      <a href={url} class="read-more">
+                        Read Article
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          ) : (
+            <div class="empty-state">
+              <div class="empty-icon">📝</div>
+              <h2 class="empty-title">No posts yet</h2>
+              <p class="empty-description">Check back soon for new content!</p>
+            </div>
+          )
+        }
+      </main>
+    </div>
+  </section>
+</MainLayout>
