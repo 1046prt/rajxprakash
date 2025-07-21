@@ -1,0 +1,98 @@
+const projectsData = {
+  title: "My",
+  highlight: "Projects",
+  filters: [
+    { id: "all", text: "All" },
+    { id: "web", text: "Web Development" },
+    { id: "ml", text: "Machine Learning" },
+    { id: "python", text: "Python" }
+  ],
+  projects: [
+    {
+      id: "portfolio",
+      title: "Portfolio Website",
+      category: "web",
+      description: "A modern, responsive personal portfolio website featuring animated backgrounds, project filtering, and integrated contact/social links.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      links: {
+        live: "https://prakashraj.vercel.app",
+        github: ""
+      },
+      image: "/assets/images/projects/project-1.png"
+    },
+    {
+      id: "brand-hub",
+      title: "Brand Hub",
+      category: "web",
+      description: "A dynamic web application for exploring brands, with real-time search, category filtering, user authentication, and Firebase integration.",
+      tags: ["HTML", "CSS", "JavaScript", "Firebase"],
+      links: {
+        live: "https://brand-hub-xi.vercel.app/",
+        github: ""
+      },
+      image: "/assets/images/projects/project-2.png"
+    },
+    {
+      id: "stock",
+      title: "Stock Dashboard",
+      category: "web",
+      description: "A web platform with a real-time stock market dashboard of top companies and a service portal connecting skilled workers with clients.",
+      tags: ["CSS", "JavaScript"],
+      links: {
+        live: "stocksdashboard.vercel.app/",
+        github: ""
+      },
+      image: "/assets/images/projects/project-3.png"
+    },
+    {
+      id: "coffee",
+      title: "Midnight Drip ",
+      category: "web",
+      description: "A modern, responsive landing page for a fictional premium coffee brand, showcasing products information.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      links: {
+        live: "midnightdrip.vercel.app/",
+        github: ""
+      },
+      image: "/assets/images/projects/project-4.png"
+    },
+    {
+      id: "spam-detection-python",
+      title: "Spam Detection Python Scripts",
+      category: "ml",
+      description: "A collection of Python scripts and datasets for SMS spam detection using machine learning and natural language processing.",
+      tags: ["Python", "scikit-learn", "NLTK", "pandas"],
+      links: {
+        live: "spamxdetector.vercel.app/",
+        github: ""
+      },
+      image: "/assets/images/projects/project-5.png"
+    },
+    {
+      id: "car-website",
+      title: "Car",
+      category: "web",
+      description: "A modern, responsive landing page for a fictional car brand, highlighting features and design.",
+      tags: ["HTML", "CSS"],
+      links: {
+        live: "#",
+        github: ""
+      },
+      image: "/assets/images/projects/project-6.png"
+    },
+    {
+      id: "python-practice",
+      title: "Python Interactive Scripts",
+      category: "python",
+      description: "A collection of interactive Python scripts and projects, including sorting algorithms, games, and algorithm visualizations.",
+      tags: ["Python", "TC", "Sorting", "Games"],
+      links: {
+        live: "#",
+        github: ""
+      },
+      image: "/assets/images/projects/project-7.png"
+    }
+  ]
+};
+
+export default projectsData;
