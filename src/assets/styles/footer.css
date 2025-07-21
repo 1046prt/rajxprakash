@@ -1,10 +1,10 @@
 .footer {
-  background: linear-gradient(90deg, #1a1a1a 60%, #232526 100%);
-  color: #fff;
+  background: var(--bg-footer-gradient);
+  color: var(--text-light);
   padding: 2rem 0;
   width: 100%;
   box-sizing: border-box;
-  border-top: 2px solid #ff6f00;
+  border-top: 2px solid var(--primary-color);
   margin-top: 3rem;
   position: relative;
   z-index: 10;
@@ -46,13 +46,13 @@
 }
 
 .footer-quick-links a:hover {
-  color: #fff;
-  opacity: 1;
+  color: var(--text-light);
+  opacity: 0.8;
 }
 
 .footer-quick-links a:not(:last-child)::after {
   content: ' |';
-  color: #fff;
+  color: var(--text-light);
   opacity: 0.6;
   margin-left: 0.2rem;
   margin-right: 0.2rem;

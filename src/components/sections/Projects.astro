@@ -1,7 +1,7 @@
 ---
 import '@/assets/styles/projects.css';
 import ProjectCard from '@/components/ui/ProjectCard.astro';
-import projectsData from '@/data/projects.json';
+import projectsData from '@/data/projects';
 ---
 
 <section id="projects" class="projects">
@@ -16,6 +16,8 @@ import projectsData from '@/data/projects.json';
       <button class="filter-btn" data-filter="web">Web Development</button>
       <button class="filter-btn" data-filter="ml">Machine Learning</button>
     </div>
+
+    <pre>{JSON.stringify(projectsData.projects, null, 2)}</pre>
 
     <div id="projects-container" class="projects-container">
       {projectsData.projects.map((project) => <ProjectCard project={project} />)}

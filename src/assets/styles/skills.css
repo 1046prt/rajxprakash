@@ -35,7 +35,7 @@
   margin-right: 3vw;
   margin-top: 0.5rem;
   margin-bottom: 0;
-  background: #222 !important; /* TEMP: debug background */
+  background: var(--bg-light) !important;
   z-index: 10;
   padding: 1rem 0;
 }
@@ -83,6 +83,7 @@
 }
 .skill-marquee-card:hover {
   transform: scale(1.07);
+  background-color: var(--bg-light);
 }
 
 .skill-marquee-label {

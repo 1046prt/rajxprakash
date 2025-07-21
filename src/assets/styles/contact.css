@@ -1,5 +1,4 @@
 .contact {
-  background-color: rgba(0, 0, 0, 0.3);
   padding: 100px 0 0 0;
   width: 100%;
   box-sizing: border-box;
@@ -83,21 +82,25 @@
   height: 4.5rem;
   background-color: var(--bg-lighter);
   border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
   transition: all var(--transition-fast);
 }
 
 .social-icon-large i {
   font-size: 2rem;
-  color: var(--text-light);
+  color: var(--primary-color);
+  transition: color 0.2s;
 }
 
 .social-icon-large:hover {
   background-color: var(--primary-color);
+  border-color: var(--primary-color);
   transform: translateY(-2px);
 }
 
 .social-icon-large:hover i {
-  color: var(--text-dark);
+  color: #fff;
 }
 
 @media screen and (max-width: 992px) {

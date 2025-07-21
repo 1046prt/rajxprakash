@@ -33,7 +33,7 @@
 }
 
 .typing {
-  color: #ff6f00;
+  color: var(--primary-color);
 }
 
 .typing-wrapper {
@@ -89,7 +89,7 @@
 }
 
 .social-icon:hover i {
-  color: var(--text-dark);
+  color: var(--primary-light);
 }
 
 .scroll-indicator {
