@@ -14,7 +14,7 @@
 }
 
 .footer {
-  background: linear-gradient(90deg, #1a1a1a 60%, #232526 100%);
+  background: var(--bg-footer-gradient);
   color: var(--text-light);
   border-top: 2px solid var(--primary-color);
 }
@@ -44,7 +44,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #ffffff, #e0f2fe);
+  background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -88,9 +88,9 @@
   align-items: stretch;
 }
 .blog-card {
-  background: transparent;
+  background: var(--card-bg);
   border-radius: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-card);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -128,7 +128,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -195,7 +195,7 @@
   background: rgba(255, 111, 0, 0.1);
 }
 .read-more:hover {
-  color: var(--text-light);
+  color: var(--primary-light);
   background: var(--primary-color);
   gap: 0.75rem;
 }
@@ -210,7 +210,7 @@
   top: 1rem;
   left: 1rem;
   background: linear-gradient(135deg, #ffb74d, #ff6f00);
-  color: white;
+  color: var(--primary-light);
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   font-size: 0.75rem;
@@ -222,11 +222,9 @@
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 1.5rem;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-card);
 }
 .empty-icon {
   font-size: 4rem;
@@ -237,10 +235,11 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #1e293b;
+  color: var(--text-light);
 }
 .empty-description {
-  color: #64748b;
+  color: var(--text-light);
+  opacity: 0.7;
   font-size: 1rem;
 }
 @media (max-width: 768px) {

@@ -1,17 +1,19 @@
 ---
 import '@/assets/styles/navbar.css';
 import { LINKS } from '@/lib/constants';
+
 const links = [
   { href: LINKS.home, text: 'Home' },
-  { href: LINKS.about, text: 'About' },
-  { href: LINKS.skills, text: 'Skills' },
-  { href: LINKS.projects, text: 'Projects' },
-  { href: LINKS.contact, text: 'Contact' },
+  { href: '/#about', text: 'About' },
+  { href: '/#skills', text: 'Skills' },
+  { href: '/#projects', text: 'Projects' },
+  { href: '/#contact', text: 'Contact' },
   { href: LINKS.blog, text: 'Blog' },
 ];
 
 // Get current page path for active link highlighting
 const currentPath = Astro.url.pathname;
+const currentHash = Astro.url.hash;
 ---
 
 <nav class="navbar">
@@ -19,28 +21,132 @@ const currentPath = Astro.url.pathname;
     <span>PR</span>
   </div>
 
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </button>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+      <svg
+        id="icon-sun"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="display: none;"
+      >
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"></circle>
+        <path d="M12 1V3" stroke="currentColor" stroke-width="2"></path>
+        <path d="M12 21V23" stroke="currentColor" stroke-width="2"></path>
+        <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2"></path>
+        <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2"></path>
+        <path d="M1 12H3" stroke="currentColor" stroke-width="2"></path>
+        <path d="M21 12H23" stroke="currentColor" stroke-width="2"></path>
+        <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2"></path>
+        <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2"></path>
+      </svg>
+      <svg
+        id="icon-moon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="display: none;"
+      >
+        <path
+          d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+          stroke="currentColor"
+          stroke-width="2"></path>
+      </svg>
+    </button>
 
-  <ul class="nav-links" id="nav-links">
-    {
-      links.map((link) => {
-        const isActive =
-          (currentPath === '/' && link.href === '/') ||
-          (currentPath.startsWith('/blog') && link.href === '/blog') ||
-          (currentPath !== '/' && currentPath !== '/blog' && link.href.startsWith('#'));
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
 
-        return (
-          <li>
-            <a href={link.href} class={isActive ? 'active' : ''}>
-              {link.text}
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+    <ul class="nav-links" id="nav-links">
+      {
+        links.map((link) => {
+          let isActive = false;
+          // Only mark Blog as active if on /blog or subpages
+          if (link.href === '/blog' && currentPath.startsWith('/blog')) {
+            isActive = true;
+          }
+          return (
+            <li>
+              <a href={link.href} class={isActive ? 'active' : ''}>
+                {link.text}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
 </nav>
+
+<script is:inline>
+  const themeToggle = document.getElementById('theme-toggle');
+  const iconSun = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
+
+  function applyTheme(isDark) {
+    document.body.classList.toggle('dark', isDark);
+    if (iconSun) iconSun.style.display = isDark ? 'inline' : 'none';
+    if (iconMoon) iconMoon.style.display = isDark ? 'none' : 'inline';
+  }
+
+  function updateTheme() {
+    const userPref = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(userPref ? userPref === 'dark' : systemPrefersDark);
+  }
+
+  // Listen for system theme changes
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', () => {
+    if (!localStorage.getItem('theme')) {
+      updateTheme();
+    }
+  });
+
+  // Set theme on initial load
+  updateTheme();
+
+  // Handle toggle click
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isCurrentlyDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', !isCurrentlyDark ? 'dark' : 'light');
+      updateTheme();
+    });
+  }
+
+  // --- Improved Active link for navigation ---
+  function updateActiveNavLink() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
+
+    navLinks.forEach(link => {
+      const linkHref = link.getAttribute('href');
+      link.classList.remove('active'); // Always remove first
+
+      if (linkHref === currentPath + currentHash) {
+        link.classList.add('active');
+      } else if (linkHref === '/blog' && currentPath.startsWith('/blog')) {
+        link.classList.add('active');
+      } else if (linkHref === '/' && currentPath === '/' && !currentHash) {
+        link.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('hashchange', updateActiveNavLink);
+  window.addEventListener('popstate', updateActiveNavLink);
+  document.addEventListener('DOMContentLoaded', updateActiveNavLink);
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+      setTimeout(updateActiveNavLink, 10);
+    });
+  });
+</script>
