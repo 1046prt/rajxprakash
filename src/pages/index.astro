@@ -233,7 +233,7 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
   </section>
 
   {/* Footer is handled by MainLayout's Footer */}
-  <script type="text/javascript" client:load>
+  <script is:inline type="text/javascript">
     // ===== NAVBAR FUNCTIONALITY =====
     function initNavbar() {
       const navbar = document.querySelector('.navbar');
