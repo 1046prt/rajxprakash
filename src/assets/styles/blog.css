@@ -4,6 +4,10 @@
   min-height: 100vh;
 }
 
+.blog-section .section-header {
+  margin-top: 3rem;
+}
+
 .blog-main {
   padding: 2rem 0;
 }
@@ -32,7 +36,7 @@
 }
 
 .blog-subtitle {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: var(--text-light);
   font-weight: 400;
   max-width: 800px;
@@ -72,7 +76,7 @@
   font-weight: 700;
 }
 .stat-label {
-  font-size: 0.875rem;
+  font-size: 1.4rem;
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -96,7 +100,7 @@
   flex-direction: column;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
-  min-height: 420px;
+  min-height: 500px;
   height: 100%;
   position: relative;
 }
@@ -109,7 +113,7 @@
 .blog-image-wrapper {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 280px;
   overflow: hidden;
 }
 .blog-image {

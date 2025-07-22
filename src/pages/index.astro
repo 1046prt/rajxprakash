@@ -6,6 +6,8 @@ import '@/assets/styles/index.css';
 import '@/assets/styles/hero.css';
 import '@/assets/styles/about.css';
 import '@/assets/styles/skills.css';
+import '@/assets/styles/education.css';
+import '@/assets/styles/experience.css';
 import '@/assets/styles/projects.css';
 import '@/assets/styles/contact.css';
 
@@ -13,6 +15,8 @@ import '@/assets/styles/contact.css';
 import heroData from '@/data/hero.json';
 import aboutData from '@/data/about.json';
 import skillsData from '@/data/skills.json';
+import educationData from '@/data/education.json';
+import experienceData from '@/data/experience.json';
 import projectsData from '@/data/projects.json';
 import contactData from '@/data/contact.json';
 
@@ -25,7 +29,7 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
   {/* Navigation is handled by MainLayout's Navbar */}
 
   {/* Hero Section */}
-  <section id="home" class="hero">
+  <section id="home" class="hero scroll-offset">
     <div class="container">
       <div class="hero-content">
         <h1 class="greeting">{heroData.greeting}</h1>
@@ -76,7 +80,7 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
   </section>
 
   {/* About Section */}
-  <section id="about" class="about">
+  <section id="about" class="about scroll-offset">
     <div class="container">
       <div class="section-header">
         <h2>{aboutData.title} <span class="highlight">{aboutData.highlight}</span></h2>
@@ -125,7 +129,7 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
   </section>
 
   {/* Skills Section */}
-  <section id="skills" class="skills">
+  <section id="skills" class="skills scroll-offset">
     <div class="container">
       <div class="section-header">
         <h2>{skillsData.title} <span class="highlight">{skillsData.highlight}</span></h2>
@@ -136,8 +140,76 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
     </div>
   </section>
 
+  {/* Education Section */}
+  <section id="education" class="education scroll-offset">
+    <div class="container">
+      <div class="section-header">
+        <h2>{educationData.title} <span class="highlight">{educationData.highlight}</span></h2>
+        <div class="underline"></div>
+      </div>
+      <div class="education-content">
+        {
+          educationData.education.map((edu) => (
+            <div class="education-item">
+              <div class="education-header">
+                <div class="education-info">
+                  <h3 class="institution">{edu.institution}</h3>
+                  <p class="degree">{edu.degree}</p>
+                  <p class="coursework">
+                    <strong>Coursework:</strong> {edu.coursework}
+                  </p>
+                  <div class="activities">
+                    <p>
+                      <strong>Extracurricular Activities:</strong>
+                    </p>
+                    <ul>
+                      {edu.extracurricularActivities.map((activity) => (
+                        <li>{activity}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div class="education-year">{edu.year}</div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* Experience Section */}
+  <section id="experience" class="experience scroll-offset">
+    <div class="container">
+      <div class="section-header">
+        <h2>{experienceData.title} <span class="highlight">{experienceData.highlight}</span></h2>
+        <div class="underline"></div>
+      </div>
+      <div class="experience-content">
+        {
+          experienceData.experiences.map((exp) => (
+            <div class="experience-item">
+              <div class="experience-header">
+                <div class="experience-info">
+                  <h3 class="position">{exp.position}</h3>
+                  <p class="company">{exp.company}</p>
+                </div>
+                <div class="experience-period">{exp.period}</div>
+              </div>
+              <ul class="responsibilities">
+                {exp.responsibilities.map((responsibility) => (
+                  <li>{responsibility}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   {/* Projects Section */}
-  <section id="projects" class="projects">
+  <section id="projects" class="projects scroll-offset">
     <div class="container">
       <div class="section-header">
         <h2>{projectsData.title} <span class="highlight">{projectsData.highlight}</span></h2>
@@ -155,7 +227,7 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
           ))
         }
       </div>
-      <div class="projects-container">
+      <div class="projects-container" id="projects-container">
         {
           projectsData.projects.map((project) => (
             <div class="project-card" data-category={project.category}>
@@ -193,7 +265,7 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
   </section>
 
   {/* Contact Section */}
-  <section id="contact" class="contact">
+  <section id="contact" class="contact scroll-offset">
     <div class="container">
       <div class="section-header">
         <h2>{contactData.title} <span class="highlight">{contactData.highlight}</span></h2>
@@ -234,4 +306,28 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
 
   {/* Footer is handled by MainLayout's Footer */}
   <script src="/scripts/index-client.js" is:inline></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Project filter logic
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', function () {
+          // Remove active from all
+          filterButtons.forEach((b) => b.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.getAttribute('data-filter');
+          projectCards.forEach((card) => {
+            const cardEl = card as HTMLElement;
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              cardEl.style.display = '';
+            } else {
+              cardEl.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 </MainLayout>

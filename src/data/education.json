@@ -1,0 +1,28 @@
+{
+  "title": "My",
+  "highlight": "Education",
+  "education": [
+    {
+      "institution": "ICFAI University, Jaipur",
+      "degree": "B.Tech in Data Science & Artificial Intelligence",
+      "year": "2023-2027",
+      "coursework": "Machine Learning, Data Structures, Python, Statistics, AI Fundamentals. Participated in hackathons and AI-based student projects",
+      "extracurricularActivities": [
+        "Event Coordinator, ICFAiSE 2025",
+        "Student Coordinator, NEP Implementation — IcfaiTech, Jaipur",
+        "Coordinator, Road Safety Club — IcfaiTech, Jaipur",
+        "Placement Volunteer, Corporate Recruitment Cell (CRC)"
+      ]
+    },
+    {
+      "institution": "Vidya Niketan",
+      "degree": "Intermediate (12th Standard)",
+      "year": "2021-2023",
+      "coursework": "Physics, Chemistry, Mathematics & Computer Science",
+      "extracurricularActivities": [
+        "Member of Coding and Science Clubs",
+        "Member of Science Club"
+      ]
+    }
+  ]
+}

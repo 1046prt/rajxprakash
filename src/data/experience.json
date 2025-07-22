@@ -1,0 +1,28 @@
+{
+  "title": "Internship",
+  "highlight": "Experience",
+  "experiences": [
+    {
+      "position": "Web Development Trainee",
+      "company": "SIMTRAK, Kolkata, West Bengal",
+      "period": "May 2025 – Present",
+      "responsibilities": [
+        "Building real-world web solutions with HTML, CSS, JavaScript, PHP, Node.js and React.",
+        "Developing full-stack applications, RESTful APIs and responsive user interfaces.",
+        "Integrating databases, automating deployment pipelines and enforcing Git-based workflows.",
+        "Collaborating in an Agile team, improving code quality through peer reviews and CI/CD."
+      ]
+    },
+    {
+      "position": "Software Trainee",
+      "company": "RecursiveZero Pvt. Ltd., Surat, Gujarat",
+      "period": "May 2025 – Jul 2025",
+      "responsibilities": [
+        "Engineered the EdTech site using Astro, TypeScript and JavaScript.",
+        "Consumed JSON-driven content to render dynamic lessons, stories and quizzes for kids.",
+        "Implemented component-based architecture, code-splitting and lazy loading for high performance.",
+        "Managed repositories with Git/GitHub and automated builds in a cloud CI pipeline."
+      ]
+    }
+  ]
+}

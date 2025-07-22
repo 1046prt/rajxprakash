@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 .dark .navbar {
@@ -23,7 +23,7 @@
 
 .navbar.scrolled {
   background-color: var(--bg-navbar-scrolled);
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -182,7 +182,7 @@
 
 @media screen and (max-width: 550px) {
   .navbar {
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -228,7 +228,7 @@
     outline: none !important;
   }
   .nav-links.active {
-    display: flex;
+    display: flex !important;
     right: 0;
   }
   .nav-links li {

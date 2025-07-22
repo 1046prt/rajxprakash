@@ -3,6 +3,7 @@ title: 'Portfolio Tech Stack & Features'
 date: 2024-06-09
 excerpt: 'A summary of the technologies and features used to build my portfolio website.'
 description: 'An overview of the technologies and features used to build my portfolio website.'
+image: '/assets/images/blog/blog-2.png'
 ---
 
 # Tech Stack & Features

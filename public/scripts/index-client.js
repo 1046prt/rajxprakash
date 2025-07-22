@@ -1,23 +1,18 @@
 // Typing animation for hero section
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('index-client.js loaded');
   const typingSpan = document.querySelector('.typing');
   if (!typingSpan) {
-    console.log('No .typing element found');
     return;
   }
 
   let words = typingSpan.getAttribute('data-words');
-  console.log('data-words attribute:', words);
   try {
     words = JSON.parse(words);
   } catch {
     words = [];
   }
-  console.log('Parsed words:', words);
   if (!Array.isArray(words) || words.length === 0) {
-    console.log('No words to animate');
     return;
   }
 
@@ -50,4 +45,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   type();
-}); 
+});

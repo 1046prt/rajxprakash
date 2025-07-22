@@ -1,36 +1,39 @@
 .footer {
-  background: var(--bg-footer-gradient);
+  background: transparent;
   color: var(--text-light);
-  padding: 2rem 0;
+  padding: 1rem 0rem;
   width: 100%;
   box-sizing: border-box;
   border-top: 2px solid var(--primary-color);
-  margin-top: 3rem;
+  margin-top: 0rem;
   position: relative;
   z-index: 10;
 }
 
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 2rem;
-  flex-wrap: nowrap;
-  gap: 0;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
 .footer-copyright {
   flex: 0 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 .footer-quick-links {
   flex: 0 0 auto;
-  text-align: right;
+  text-align: center;
   display: flex;
   gap: 0;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
@@ -41,7 +44,7 @@
   font-weight: 700;
   opacity: 1;
   font-size: 1.4rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.25rem;
   white-space: nowrap;
 }
 
@@ -63,24 +66,14 @@
   opacity: 0.8;
   font-size: 1.4rem;
   font-weight: 400;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
   .footer-bottom {
-    flex-direction: column;
     gap: 2rem;
-    text-align: center;
-  }
-  .footer-copyright {
-    text-align: center;
-    margin-right: 0;
-  }
-  .footer-quick-links {
-    text-align: center;
-    justify-content: center;
-    gap: 2rem;
-    margin-left: 0;
   }
 }
 
@@ -93,12 +86,34 @@
     gap: 1.2rem;
   }
   .footer-quick-links {
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
   .footer-copyright p {
     font-size: 1.3rem;
   }
   .footer-quick-links a {
     font-size: 1.3rem;
+    padding: 0.4rem 0.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-bottom {
+    padding: 0 0.5rem;
+  }
+  .footer-quick-links {
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+  .footer-quick-links a:not(:last-child)::after {
+    display: none;
+  }
+  .footer-copyright p {
+    font-size: 1.2rem;
+  }
+  .footer-quick-links a {
+    font-size: 1.2rem;
+    padding: 0.3rem;
   }
 }

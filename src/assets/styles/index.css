@@ -20,7 +20,7 @@
   --about-bg: rgba(0, 0, 0, 0.03);
   --contact-bg: rgba(0, 0, 0, 0.03);
   /* Spacing */
-  --section-padding: 100px 0;
+  --section-padding: 60px 0;
   --element-margin: 2rem;
   /* Animations */
   --transition-fast: 0.8s ease;
@@ -90,6 +90,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  scroll-margin-top: 100px; /* Adjust offset based on navbar height */
 }
 
 section > .container {
@@ -163,7 +164,7 @@ a {
 
 .section-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   width: 100%;
 }
 
@@ -234,4 +235,111 @@ nav {
   margin-right: 0;
 }
 
-/* Utility and global classes only below this line */
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+  border: none;
+  transition: all var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(255, 111, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--primary-dark);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+
+/* Smooth scrollbar animation for modern browsers */
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+  }
+}
+
+/* Enhanced scrollbar for containers with overflow */
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 6px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 6px;
+  border: none;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 1px 4px rgba(255, 111, 0, 0.3);
+}
+
+/* Offset for anchor navigation to account for fixed navbar */
+.scroll-offset {
+  scroll-margin-top: 8rem !important;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 40px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  :root {
+    --section-padding: 30px 0;
+  }
+  
+  .scroll-offset {
+    scroll-margin-top: 8rem !important;
+  }
+  
+  /* Smaller scrollbar on mobile */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border: none;
+  }
+}
+

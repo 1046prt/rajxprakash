@@ -1,6 +1,6 @@
 .contact {
   background-color: var(--contact-bg);
-  padding: 100px 0 0 0;
+  padding: var(--section-padding);
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -81,7 +81,7 @@
   justify-content: center;
   width: 4.5rem;
   height: 4.5rem;
-  background-color: var(--bg-lighter);
+  background-color: transparent;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
