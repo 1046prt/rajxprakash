@@ -2,6 +2,7 @@
   padding: var(--section-padding);
   background-color: transparent;
   min-height: 100vh;
+  margin-top: 2rem;
 }
 
 .blog-section .section-header {
@@ -36,7 +37,7 @@
 }
 
 .blog-subtitle {
-  font-size: 2.2rem;
+  font-size: 4rem;
   color: var(--text-light);
   font-weight: 400;
   max-width: 800px;

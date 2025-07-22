@@ -317,7 +317,7 @@ html {
   :root {
     --section-padding: 40px 0;
   }
-  
+
   .section-header {
     margin-bottom: 2rem;
   }
@@ -327,19 +327,18 @@ html {
   :root {
     --section-padding: 30px 0;
   }
-  
+
   .scroll-offset {
     scroll-margin-top: 8rem !important;
   }
-  
+
   /* Smaller scrollbar on mobile */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     border: none;
   }
 }
-

@@ -14,7 +14,7 @@
 
 /* Central timeline for experience */
 .experience-content::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   top: 2rem;

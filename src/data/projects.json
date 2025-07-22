@@ -13,7 +13,7 @@
       "title": "Portfolio Website",
       "category": "web",
       "description": "A modern, responsive personal portfolio website featuring animated backgrounds, project filtering, and integrated contact/social links.",
-      "tags": ["HTML", "CSS", "JavaScript"],
+      "tags": ["Astro", "TailWind CSS", "TypeScript", "JavaScript"],
       "links": {
         "live": "https://prakashraj.vercel.app",
         "github": ""

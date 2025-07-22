@@ -1,6 +1,7 @@
 // Typing animation for hero section
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Typing animation
   const typingSpan = document.querySelector('.typing');
   if (!typingSpan) {
     return;
@@ -45,4 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   type();
+
+  // Add scroll down button functionality
+  const scrollIndicator = document.querySelector('.scroll-indicator');
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', function () {
+      // Find the about section or the next section after hero
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 });
