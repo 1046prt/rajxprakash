@@ -1,6 +1,7 @@
 .about {
   background-color: var(--about-bg);
   width: 100%;
+  scroll-padding-top: 80px;
 }
 
 .about-content {

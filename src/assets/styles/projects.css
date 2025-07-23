@@ -1,7 +1,8 @@
 .projects {
   background-color: var(--about-bg);
-  padding: var(--section-padding);
+  padding-top: 10vh;
   width: 100%;
+  margin-top: 10px;
 }
 
 .project-filters {

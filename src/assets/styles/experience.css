@@ -1,7 +1,7 @@
 .experience {
-  background-color: var(--contact-bg);
   width: 100%;
-  padding: var(--section-padding);
+  padding-top: 10vh;
+  scroll-padding-top: 80px;
 }
 
 .experience-content {
@@ -12,7 +12,6 @@
   padding: 2rem 0;
 }
 
-/* Central timeline for experience */
 .experience-content::before {
   content: '';
   position: absolute;

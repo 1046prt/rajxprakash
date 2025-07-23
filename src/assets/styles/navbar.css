@@ -18,6 +18,22 @@
   padding: 0 2rem;
 }
 
+/* Main fix for scroll behavior */
+html {
+  scroll-padding-top: 70px; /* Matches your navbar height */
+}
+
+/* Fallback for older browsers */
+section[id] {
+  padding-top: 70px;
+  margin-top: -70px;
+}
+
+/* Ensure proper spacing for the first section */
+#home {
+  padding-top: 80px;
+}
+
 .dark .navbar {
   background: rgba(26, 26, 26, 0.7);
   backdrop-filter: blur(5px);
