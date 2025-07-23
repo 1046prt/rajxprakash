@@ -21,7 +21,8 @@
         { "name": "Python", "icon": "fab fa-python", "iconSvg": "python.svg" },
         { "name": "Data Analysis", "icon": "fas fa-chart-bar", "iconSvg": "da.svg" },
         { "name": "Machine Learning", "icon": "fas fa-brain", "iconSvg": "ml.svg" },
-        { "name": "Data Visualization", "icon": "fas fa-chart-line", "iconSvg": "dv.svg" }
+        { "name": "Data Visualization", "icon": "fas fa-chart-line", "iconSvg": "dv.svg" },
+        { "name": "Streamlit", "icon": "fas fa-laptop-code", "iconSvg": "streamlit.svg" }
       ]
     },
     {

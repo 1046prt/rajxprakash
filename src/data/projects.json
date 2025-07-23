@@ -21,6 +21,18 @@
       "image": "/assets/images/projects/project-1.png"
     },
     {
+      "id": "car-data-app",
+      "title": "Cars Data Analysis Dashboard",
+      "category": "python",
+      "description": "An interactive Streamlit web app that explores luxury car dataset features with animated charts, dark/light theme, and downloadable reports.",
+      "tags": ["Python", "Streamlit", "Pandas", "Data Visualization"],
+      "links": {
+        "live": "https://dashboardxcar.streamlit.app/",
+        "github": ""
+      },
+      "image": "/assets/images/projects/project-2.png"
+    },
+    {
       "id": "brand-hub",
       "title": "Brand Hub",
       "category": "web",
@@ -28,18 +40,6 @@
       "tags": ["HTML", "CSS", "JavaScript", "Firebase"],
       "links": {
         "live": "https://brand-hub-xi.vercel.app/",
-        "github": ""
-      },
-      "image": "/assets/images/projects/project-2.png"
-    },
-    {
-      "id": "stock",
-      "title": "Stock Dashboard",
-      "category": "web",
-      "description": "A web platform with a real-time stock market dashboard of top companies and a service portal connecting skilled workers with clients.",
-      "tags": ["CSS", "JavaScript"],
-      "links": {
-        "live": "stocksdashboard.vercel.app/",
         "github": ""
       },
       "image": "/assets/images/projects/project-3.png"
@@ -91,6 +91,18 @@
         "github": ""
       },
       "image": "/assets/images/projects/project-7.png"
+    },
+    {
+      "id": "stock",
+      "title": "Stock Dashboard",
+      "category": "web",
+      "description": "A web platform with a real-time stock market dashboard of top companies and a service portal connecting skilled workers with clients.",
+      "tags": ["CSS", "JavaScript"],
+      "links": {
+        "live": "stocksdashboard.vercel.app/",
+        "github": ""
+      },
+      "image": "/assets/images/projects/project-8.png"
     }
   ]
 }
