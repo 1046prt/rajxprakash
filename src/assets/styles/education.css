@@ -12,7 +12,6 @@
   padding: 2rem 0;
 }
 
-/* Central timeline line */
 .education-content::before {
   content: '';
   position: absolute;
@@ -37,7 +36,6 @@
   margin: 2rem 0;
 }
 
-/* Alternating left and right positioning */
 .education-item:nth-child(odd) {
   margin-left: 0;
   margin-right: auto;
@@ -105,7 +103,6 @@
   font-weight: 600;
 }
 
-/* Coursework and Activities styling */
 .coursework {
   font-size: 1.4rem;
   color: var(--text-light);
@@ -162,7 +159,6 @@
   transform: translateY(-50%);
 }
 
-/* Timeline dots */
 .education-item::before {
   content: '';
   position: absolute;
@@ -177,17 +173,14 @@
   transform: translateY(-50%);
 }
 
-/* Left side dots */
 .education-item:nth-child(odd)::before {
   right: -11px;
 }
 
-/* Right side dots */
 .education-item:nth-child(even)::before {
   left: -11px;
 }
 
-/* Arrow pointers to timeline */
 .education-item::after {
   content: '';
   position: absolute;
@@ -198,7 +191,6 @@
   z-index: 2;
 }
 
-/* Left side arrow pointing right */
 .education-item:nth-child(odd)::after {
   right: -10px;
   border-left: 15px solid var(--card-bg);
@@ -206,7 +198,6 @@
   border-bottom: 10px solid transparent;
 }
 
-/* Right side arrow pointing left */
 .education-item:nth-child(even)::after {
   left: -10px;
   border-right: 15px solid var(--card-bg);
@@ -215,7 +206,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  /* Switch to vertical timeline on mobile */
   .education-content::before {
     left: 2rem;
     transform: none;
