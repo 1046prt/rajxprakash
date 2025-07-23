@@ -46,7 +46,7 @@ Once configured, the site will automatically deploy when you:
 The site builds to the `dist/` directory and deploys to:
 
 - **URL**: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME`
-- **Custom Domain**: `https://prakashraj.info` (if configured)
+- **Custom Domain**: `xyz.com`
 
 ## 🛠️ Manual Deployment
 
@@ -62,14 +62,14 @@ npm run deploy
 
 ## 🔍 Troubleshooting
 
-### Common Issues:
+### **Common Issues:**
 
 1. **Build Fails**: Check GitHub Actions logs for errors
 2. **404 Errors**: Ensure all file paths are correct
 3. **Styling Issues**: Verify Tailwind CSS is building correctly
 4. **Images Not Loading**: Check image paths in `public/` directory
 
-### Check Build Locally:
+### **Check Build Locally:**
 
 ```bash
 npm run build

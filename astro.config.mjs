@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import { fileURLToPath } from 'url';
-import { join } from 'path';
 
 export default defineConfig({
   site: 'https://prakashraj.info',

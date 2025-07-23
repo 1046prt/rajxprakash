@@ -1,7 +1,3 @@
----
-// ScrollToTop component - reusable across pages
----
-
 <button class="back-to-top" id="scrollToTopBtn" title="Back to top">
   <svg
     width="24"
@@ -25,17 +21,13 @@
 
     init() {
       if (!this.button) return;
-
-      // Add click event
       this.button.addEventListener('click', () => this.scrollToTop());
 
-      // Add scroll event
       window.addEventListener('scroll', () => {
         this.toggleVisibility();
         this.adjustForFooter();
       });
 
-      // Initial check
       this.toggleVisibility();
       this.adjustForFooter();
     }
@@ -69,7 +61,6 @@
     }
   }
 
-  // Initialize when DOM is loaded
   document.addEventListener('DOMContentLoaded', () => {
     new ScrollToTop();
   });

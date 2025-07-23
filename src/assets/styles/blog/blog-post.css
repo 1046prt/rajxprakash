@@ -100,12 +100,12 @@ body.dark .post-content {
   color: inherit;
 }
 
-/* Lists */
 .post-content ul,
 .post-content ol {
   margin: 1.5rem 0 1.5rem 2rem;
   padding-left: 1.2rem;
 }
+
 .post-content ul li,
 .post-content ol li {
   margin-bottom: 0.7rem;
@@ -154,7 +154,6 @@ body.dark .post-content blockquote {
   color: #ffb74d;
 }
 
-/* Code blocks */
 .post-content pre {
   background: var(--bg-lighter);
   color: var(--primary-color);
@@ -185,18 +184,17 @@ body.dark .post-content code {
   color: #fff;
 }
 
-/* Links */
 .post-content a {
   color: var(--primary-color);
   text-decoration: underline;
   font-weight: 500;
   transition: color 0.2s;
 }
+
 .post-content a:hover {
   color: #ffb74d;
 }
 
-/* Images */
 .post-content img {
   max-width: 100%;
   border-radius: 1rem;
@@ -204,7 +202,6 @@ body.dark .post-content code {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* HR */
 .post-content hr {
   border: none;
   height: 2px;

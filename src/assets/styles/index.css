@@ -19,10 +19,8 @@
   --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.1);
   --about-bg: rgba(0, 0, 0, 0.03);
   --contact-bg: rgba(0, 0, 0, 0.03);
-  /* Spacing */
   --section-padding: 60px 0;
   --element-margin: 2rem;
-  /* Animations */
   --transition-fast: 0.8s ease;
   --transition-medium: 0.9s ease;
   --transition-slow: 0.8s ease;
@@ -57,7 +55,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
   width: 100%;
   overflow-x: hidden;
 }
@@ -90,7 +88,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-margin-top: 100px; /* Adjust offset based on navbar height */
+  scroll-margin-top: 100px;
 }
 
 section > .container {
@@ -235,7 +233,6 @@ nav {
   margin-right: 0;
 }
 
-/* Custom Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
@@ -267,13 +264,11 @@ nav {
   background: transparent;
 }
 
-/* Firefox Scrollbar */
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) transparent;
 }
 
-/* Smooth scrollbar animation for modern browsers */
 @supports (scrollbar-width: thin) {
   * {
     scrollbar-width: thin;
@@ -281,7 +276,6 @@ html {
   }
 }
 
-/* Enhanced scrollbar for containers with overflow */
 .scrollable {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) transparent;
@@ -308,7 +302,6 @@ html {
   box-shadow: 0 1px 4px rgba(255, 111, 0, 0.3);
 }
 
-/* Offset for anchor navigation to account for fixed navbar */
 .scroll-offset {
   scroll-margin-top: 8rem !important;
 }
@@ -332,7 +325,6 @@ html {
     scroll-margin-top: 8rem !important;
   }
 
-  /* Smaller scrollbar on mobile */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
