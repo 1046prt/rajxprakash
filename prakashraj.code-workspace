@@ -37,25 +37,6 @@
     "prettier.proseWrap": "always",
 
     "workbench.colorCustomizations": {
-      "activityBar.activeBackground": "#6a5acd",
-      "activityBar.background": "#7b5fc9",
-      "activityBar.foreground": "#e7e7ff",
-      "activityBar.inactiveForeground": "#e7e7ff99",
-      "activityBarBadge.background": "#4b3a7a",
-      "activityBarBadge.foreground": "#e7e7ff",
-      "commandCenter.border": "#b3a6e7",
-      "sash.hoverBorder": "#7b5fc9",
-      "sideBar.border": "#7b5fc9",
-      "statusBar.background": "#5a3fa6",
-      "statusBar.foreground": "#e7e7ff",
-      "statusBarItem.hoverBackground": "#7b5fc9",
-      "statusBarItem.remoteBackground": "#5a3fa6",
-      "statusBarItem.remoteForeground": "#e7e7ff",
-      "titleBar.activeBackground": "#5a3fa6",
-      "titleBar.activeForeground": "#e7e7ff",
-      "titleBar.inactiveBackground": "#5a3fa699",
-      "titleBar.inactiveForeground": "#e7e7ff99",
-
       "extensions": {
         "recommendations": [
           "astro-build.astro-vscode",
@@ -69,9 +50,9 @@
           "GitHub.copilot-chat",
           "mikestead.dotenv",
           "visualstudioexptteam.vscodeintellicode",
-          "streetsidesoftware.code-spell-checker",
-        ],
-      },
+          "streetsidesoftware.code-spell-checker"
+        ]
+      }
     },
   },
 }

@@ -1,7 +1,6 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
 import Particles from '@/components/common/Particles.astro';
-import { LINKS } from '@/lib/constants';
 import '@/assets/styles/index.css';
 import '@/assets/styles/hero.css';
 import '@/assets/styles/about.css';
@@ -223,7 +222,7 @@ const meta = {
           projectsData.projects.map((project) => (
             <div class="project-card" data-category={project.category}>
               <div class="project-image">
-                {/* <img src={project.image} alt={project.title}> */}
+                {<img src={project.image} alt={project.title} />}
                 <div class="project-overlay">
                   <div class="project-links">
                     {project.links?.live && (
