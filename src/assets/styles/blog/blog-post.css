@@ -214,7 +214,7 @@ body.dark .post-content code {
 
 @media (max-width: 900px) {
   .container {
-  max-width: 100vw;
+    max-width: 100vw;
   }
   .blog-post {
     padding: 10px 10px;

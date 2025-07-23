@@ -5,7 +5,18 @@ import Footer from '@/components/common/Footer.astro';
 import ScrollToTop from '@/components/common/ScrollToTop.astro';
 import '@/assets/styles/scrolltotop.css';
 
-const { title } = Astro.props;
+const { meta } = Astro.props;
+
+const defaultMeta = {
+  title: meta.title,
+  description: meta.description,
+  image: meta.image,
+  url: meta.url || Astro.url.href,
+  siteName: meta.siteName,
+  type: 'website',
+  author: '',
+  keywords: '',
+};
 ---
 
 <!doctype html>
@@ -13,12 +24,26 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+
+    <title>{defaultMeta.title}</title>
+    <meta name="description" content={defaultMeta.description} />
+    <meta name="author" content={defaultMeta.author} />
+    <meta name="keywords" content={defaultMeta.keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="image" content={defaultMeta.image} />
+    <link rel="canonical" href={defaultMeta.url} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/PR.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- Fonts and Styles -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
     <Particles />
@@ -27,8 +52,8 @@ const { title } = Astro.props;
     <main>
       <slot />
     </main>
-    <Footer />
 
+    <Footer />
     <ScrollToTop />
 
     <script src="/scripts/particles.js" type="module"></script>

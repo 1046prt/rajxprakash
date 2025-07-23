@@ -21,9 +21,18 @@ import projectsData from '@/data/projects.json';
 import contactData from '@/data/contact.json';
 
 import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
+
+const meta = {
+  title: 'Prakash Raj | Data Scientist & Engineer',
+  description:
+    'Passionate full stack developer specializing in modern web technologies. Creating beautiful, functional websites and applications. View my portfolio, projects, and get in touch.',
+  image: '/assets/images/PR.png',
+  url: Astro.url.href,
+  siteName: 'Prakash Raj',
+};
 ---
 
-<MainLayout title="Prakash Raj | Developer’s Playground">
+<MainLayout meta={meta}>
   {/* Animated Background */}
   <Particles />
   {/* Navigation is handled by MainLayout's Navbar */}
@@ -301,12 +310,12 @@ import SkillIcons, { skillIcons } from '@/components/common/SkillIcons.astro';
           projectCards.forEach((card) => {
             if (card instanceof HTMLElement) {
               const cardEl = card;
-            }
 
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
-              cardEl.style.display = '';
-            } else {
-              cardEl.style.display = 'none';
+              if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                cardEl.style.display = '';
+              } else {
+                cardEl.style.display = 'none';
+              }
             }
           });
         });

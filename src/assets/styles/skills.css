@@ -108,8 +108,6 @@
   overflow: hidden;
 }
 
-
-
 .skill-card:hover::before {
   opacity: 0.1;
 }

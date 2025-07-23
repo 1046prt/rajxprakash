@@ -169,7 +169,7 @@ npm run build
 npm run preview
 ```
 
-- Now  Start small, experiment, and enjoy building with Astro. It's fast, fun, and ready for the future  as You're all set and now you are  working on Astro project and a good understanding of how to:
+- Now Start small, experiment, and enjoy building with Astro. It's fast, fun, and ready for the future as You're all set and now you are working on Astro project and a good understanding of how to:
   - Create pages
   - Build components
   - Add styling

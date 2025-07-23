@@ -14,9 +14,16 @@ const post = await getEntryBySlug('blog', slug);
 if (!post) throw new Error('Post not found');
 
 const { Content } = await post.render();
+
+const meta = {
+  title: post.data.title,
+  description: post.data.description,
+  image: post.data.image,
+  url: Astro.url.href,
+};
 ---
 
-<MainLayout title={post.data.title}>
+<MainLayout meta={meta}>
   <div class="container">
     <a href="/blog" class="back-link"><i class="fas fa-arrow-left"></i></a>
     <article class="blog-post">
