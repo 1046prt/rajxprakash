@@ -1,10 +1,10 @@
 ---
 title: 'Portfolio Tech Stack & Features'
 date: 2024-06-09
-excerpt: 'A summary of the technologies and features used to build my portfolio website.'
+excerpt: 'A summary of the technologies and features used to build my portfolio website. Learn how each tool contributes to performance, design, and maintainability.'
 description: 'An overview of the technologies and features used to build my portfolio website.'
 image: '/assets/images/blog/blog-2.png'
-aurthor : "Prakash Raj"
+aurthor: 'Prakash Raj'
 ---
 
 ## Tech Stack & Features

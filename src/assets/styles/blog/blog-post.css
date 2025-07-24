@@ -9,12 +9,6 @@
   color: var(--text-light);
 }
 
-.footer {
-  background: linear-gradient(90deg, #1a1a1a 60%, #232526 100%);
-  color: var(--text-light);
-  border-top: 2px solid var(--primary-color);
-}
-
 .blog-post {
   width: 98%;
   max-width: 1200px;
