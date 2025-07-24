@@ -17,7 +17,7 @@ const { Content } = await post.render();
 
 const meta = {
   title: post.data.title,
-  description: post.data.description,
+  description: post.data.excerpt,
   image: post.data.image,
   url: Astro.url.href,
 };

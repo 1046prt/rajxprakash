@@ -4,6 +4,7 @@ date: 2024-06-09
 excerpt: 'A summary of the technologies and features used to build my portfolio website.'
 description: 'An overview of the technologies and features used to build my portfolio website.'
 image: '/assets/images/blog/blog-2.png'
+aurthor : "Prakash Raj"
 ---
 
 ## Tech Stack & Features
@@ -89,3 +90,5 @@ This page provides a detailed overview of the technologies, tools, and features 
 ---
 
 **Thanks For Reading!**
+
+## _**Prakash Raj**_
