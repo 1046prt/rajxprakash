@@ -70,12 +70,12 @@
     },
     {
       "id": "car-website",
-      "title": "Car",
+      "title": "LuxuryAutos",
       "category": "web",
       "description": "A modern, responsive landing page for a fictional car brand, highlighting features and design.",
       "tags": ["HTML", "CSS"],
       "links": {
-        "live": "#",
+        "live": "https://luxuryautos.vercel.app",
         "github": ""
       },
       "image": "/assets/images/projects/project-6.png"
