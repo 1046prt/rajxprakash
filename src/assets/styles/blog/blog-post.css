@@ -23,11 +23,6 @@
   transition: box-shadow 0.2s;
 }
 
-.back-link {
-  color: var(--primary-color);
-  font-size: 25px;
-}
-
 .post-header {
   background: none;
   color: var(--primary-color);
