@@ -83,24 +83,19 @@
       animationFrameId = requestAnimationFrame(animateParticles);
     }
 
-    // Initial setup
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
     function handleThemeChange() {
-      // Use a short timeout to allow the body class to update
       setTimeout(initParticles, 50);
     }
 
-    // Re-initialize particles when the theme changes
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
       themeToggle.addEventListener('click', handleThemeChange);
     }
 
-    // Also handle system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      // Only re-init if we are in 'auto' mode
       if (!localStorage.getItem('theme')) {
         handleThemeChange();
       }
