@@ -10,6 +10,9 @@ import tailwindIcon from '@/assets/icons/tailwind.svg';
 import nodejsIcon from '@/assets/icons/nodejs.svg';
 import jsonIcon from '@/assets/icons/json.svg';
 import pythonIcon from '@/assets/icons/python.svg';
+import C_Icon from '@/assets/icons/c_.svg';
+import SQLIcon from '@/assets/icons/sql.svg';
+import RUBYIcon from '@/assets/icons/Ruby.svg';
 import daIcon from '@/assets/icons/da.svg';
 import mlIcon from '@/assets/icons/ml.svg';
 import dvIcon from '@/assets/icons/dv.svg';
@@ -26,6 +29,13 @@ import vscodeIcon from '@/assets/icons/vscode.svg';
 import figmaIcon from '@/assets/icons/figma.svg';
 import canvaIcon from '@/assets/icons/canva.svg';
 import StreamlitIcon from '@/assets/icons/streamlit.svg';
+import DSAIcon from '@/assets/icons/dsa.svg';
+import OOPIcon from '@/assets/icons/oops.svg';
+import COAIcon from '@/assets/icons/coa.svg';
+import DAAIcon from '@/assets/icons/daa.svg';
+import TOCIcon from '@/assets/icons/toc.svg';
+import BEEEIcon from '@/assets/icons/beee.svg';
+import IOTIcon from '@/assets/icons/iot.svg';
 
 const skillIcons = {
   HTML5: html5Icon,
@@ -44,7 +54,10 @@ const skillIcons = {
   R: rIcon,
   Java: javaIcon,
   C: cIcon,
-  php: phpIcon,
+  PHP: phpIcon,
+  'C++': C_Icon,
+  SQL: SQLIcon,
+  RUBY: RUBYIcon,
   MongoDB: mongodbIcon,
   MySQL: mysqlIcon,
   Git: gitIcon,
@@ -54,10 +67,29 @@ const skillIcons = {
   Figma: figmaIcon,
   Canva: canvaIcon,
   Streamlit: StreamlitIcon,
+  'Data Structure': DSAIcon,
+  'Object-Oriented': OOPIcon,
+  'Internet of Things': IOTIcon,
+  'Digital Logic': BEEEIcon,
+  'Computer Architecture': COAIcon,
+  'Algorithm Analysis': DAAIcon,
+  'Theory of Computation': TOCIcon,
 };
 
 const skillsData = {
   categories: [
+    {
+      name: 'Course Work',
+      skills: [
+        { name: 'Data Structure', icon: 'fab fa-dsa', iconSvg: 'dsa.svg' },
+        { name: 'Object-Oriented', icon: 'fab fa-oop-alt', iconSvg: 'oops.svg' },
+        { name: 'Internet of Things', icon: 'fab fa-iot-alt', iconSvg: 'iot.svg' },
+        { name: 'Computer Architecture', icon: 'fab fa-coa-alt', iconSvg: 'coa.svg' },
+        { name: 'Algorithm Analysis', icon: 'fab fa-DAA-alt', iconSvg: 'daa.svg' },
+        { name: 'Theory of Computation', icon: 'fab fa-coa-alt', iconSvg: 'toc.svg' },
+        { name: 'Digital Logic', icon: 'fab fa-coa-alt', iconSvg: 'beee.svg' },
+      ],
+    },
     {
       name: 'Web Development',
       skills: [
@@ -69,6 +101,19 @@ const skillsData = {
         { name: 'Astro', icon: 'fas fa-code', iconSvg: 'astro.svg' },
         { name: 'React', icon: 'fab fa-react', iconSvg: 'react.svg' },
         { name: 'Tailwind CSS', icon: 'fab fa-css3-alt', iconSvg: 'tailwind.svg' },
+      ],
+    },
+    {
+      name: 'Tools & Platforms',
+      skills: [
+        { name: 'MongoDB', icon: 'fas fa-database', iconSvg: 'mongodb.svg' },
+        { name: 'MySQL', icon: 'fas fa-database', iconSvg: 'mysql.svg' },
+        { name: 'Git', icon: 'fab fa-git', iconSvg: 'git.svg' },
+        { name: 'GitHub', icon: 'fab fa-github', iconSvg: 'github.svg' },
+        { name: 'Chrome DevTools', icon: 'fab fa-chrome', iconSvg: 'chrome.svg' },
+        { name: 'VSCode', icon: 'fas fa-code', iconSvg: 'vscode.svg' },
+        { name: 'Figma', icon: 'fab fa-figma', iconSvg: 'figma.svg' },
+        { name: 'Canva', icon: 'fas fa-paint-brush', iconSvg: 'canva.svg' },
       ],
     },
     {
@@ -87,20 +132,10 @@ const skillsData = {
         { name: 'Java', icon: 'fab fa-java', iconSvg: 'java.svg' },
         { name: 'C', icon: 'fas fa-c', iconSvg: 'c.svg' },
         { name: 'R', icon: 'fas fa-r', iconSvg: 'r.svg' },
-        { name: 'php', icon: 'fas fa-code', iconSvg: 'php.svg' },
-      ],
-    },
-    {
-      name: 'Tools & Platforms',
-      skills: [
-        { name: 'MongoDB', icon: 'fas fa-database', iconSvg: 'mongodb.svg' },
-        { name: 'MySQL', icon: 'fas fa-database', iconSvg: 'mysql.svg' },
-        { name: 'Git', icon: 'fab fa-git', iconSvg: 'git.svg' },
-        { name: 'GitHub', icon: 'fab fa-github', iconSvg: 'github.svg' },
-        { name: 'Chrome DevTools', icon: 'fab fa-chrome', iconSvg: 'chrome.svg' },
-        { name: 'VSCode', icon: 'fas fa-code', iconSvg: 'vscode.svg' },
-        { name: 'Figma', icon: 'fab fa-figma', iconSvg: 'figma.svg' },
-        { name: 'Canva', icon: 'fas fa-paint-brush', iconSvg: 'canva.svg' },
+        { name: 'PHP', icon: 'fas fa-code', iconSvg: 'php.svg' },
+        { name: 'C++', icon: 'fas fa-code', iconSvg: 'c_.svg' },
+        { name: 'RUBY', icon: 'fas fa-code', iconSvg: 'Ruby.svg' },
+        { name: 'SQL', icon: 'fas fa-code', iconSvg: 'sql.svg' },
       ],
     },
   ],
@@ -109,13 +144,6 @@ const skillsData = {
 
 <section class="skills-section">
   <div class="skills-container">
-    <div class="skills-header">
-      <h2 class="skills-title">
-        {skillsData.title}
-        <span class="skills-highlight">{skillsData.highlight}</span>
-      </h2>
-    </div>
-
     <div class="skills-categories-grid">
       {
         skillsData.categories.map((category) => (
