@@ -42,7 +42,6 @@
           "astro-build.astro-vscode",
           "esbenp.prettier-vscode",
           "dbaeumer.vscode-eslint",
-          "bradlc.vscode-tailwindcss",
           "unifiedjs.vscode-mdx",
           "csstools.postcss",
           "stylelint.vscode-stylelint",
