@@ -123,7 +123,7 @@ const meta = {
         <h2>{skillsData.title} <span class="highlight">{skillsData.highlight}</span></h2>
         <div class="underline"></div>
       </div>
-      {/* Marquee Skill Icons */}
+      {/*Skill Icons */}
       <SkillIcons />
     </div>
   </section>
@@ -292,7 +292,7 @@ const meta = {
     </div>
   </section>
 
-  {/* Footer is handled by MainLayout's Footer */}
+  {/* Footer */}
   <script src="/scripts/index-client.js" is:inline></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -307,7 +307,6 @@ const meta = {
           projectCards.forEach((card) => {
             if (card instanceof HTMLElement) {
               const cardEl = card;
-
               if (filter === 'all' || card.getAttribute('data-category') === filter) {
                 cardEl.style.display = '';
               } else {
