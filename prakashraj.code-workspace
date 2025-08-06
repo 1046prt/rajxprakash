@@ -49,9 +49,9 @@
           "GitHub.copilot-chat",
           "mikestead.dotenv",
           "visualstudioexptteam.vscodeintellicode",
-          "streetsidesoftware.code-spell-checker",
-        ],
-      },
+          "streetsidesoftware.code-spell-checker"
+        ]
+      }
     },
   },
 }

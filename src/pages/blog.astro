@@ -5,7 +5,9 @@ import '@/assets/styles/index.css';
 import '@/assets/styles/blog.css';
 
 const blogs = await getCollection('blog');
-const sortedBlogs = blogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+const sortedBlogs = [...blogs].sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 
 const meta = {
   title: 'Read Blogs : Insights, Innovations & Inspirations',
@@ -61,6 +63,7 @@ const meta = {
                         src={blog.data.image || '/assets/blog/default.jpg'}
                         alt={blog.data.title}
                         class="blog-image"
+                        loading="lazy"
                       />
                       <div class="image-overlay" />
                     </div>
