@@ -9,6 +9,7 @@ import '@/assets/styles/education.css';
 import '@/assets/styles/experience.css';
 import '@/assets/styles/projects.css';
 import '@/assets/styles/contact.css';
+import ClickSound from '@/components/common/UISound.astro';
 
 //JSON data
 import heroData from '@/data/hero.json';
@@ -35,7 +36,7 @@ const meta = {
   {/* Animated Background */}
   <Particles />
   {/* Navigation is handled by MainLayout's Navbar */}
-
+  <ClickSound />
   {/* Hero Section */}
   <section id="home" class="hero scroll-offset">
     <div class="container">
