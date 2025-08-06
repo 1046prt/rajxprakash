@@ -1,46 +1,56 @@
-# Astro Portfolio Website
+# [Prakash raj](https://prakashraj.info) Portfolio Website
 
-This is my portfolio website built with [Astro](https://astro.build/), featuring a dark theme, smooth animations, and optimized performance. The site showcases projects, skills, and includes a fully functional blog system.
+Welcome to my personal portfolio built with [Astro](https://astro.build/), a fast, modern static site framework. This site showcases my projects, skills, and blog content in a clean, responsive layout with a professional dark theme and smooth animations.
 
-## 🚀 Key Features
+---
 
-- **Modern Tech Stack**: Built with Astro for optimal performance and developer experience
-- **Responsive Design**: Adapts seamlessly to all screen sizes (mobile, tablet, desktop)
-- **Blog System**: Markdown-powered blog with automatic sorting and SEO optimization
-- **Projects Showcase**: Dynamic project cards generated from JSON data
-- **Animated Hero Section**: Eye-catching particle effects and smooth transitions
-- **Dark Theme**: Professional dark color scheme throughout
-- **SEO Optimized**: Meta tags, structured data, and performance best practices
-- **Accessibility**: Semantic HTML and keyboard navigation support
+## Highlights
 
-## 🛠️ Tech Stack
+- **Modern Tech Stack**: Powered by Astro and TypeScript for a fast and efficient development experience.
+- **Fully Responsive**: Looks great on mobile, tablet, and desktop devices.
+- **Built-in Blog**: Markdown-powered blogging with SEO and slug-based routing.
+- **Project Showcase**: Dynamic cards generated from structured JSON data.
+- **Polished UI**: Dark mode, animated hero section, and particle effects.
+- **SEO Friendly**: Optimized meta tags, performance best practices, and structured data.
+- **Accessible**: Semantic HTML and keyboard-friendly navigation.
 
-### **Framework \& Build**
+---
 
-- **Astro** - Modern static site generator with minimal JavaScript shipping
-- **TypeScript** - Type safety and better developer experience
-- **Vite** - Fast build tool and dev server
+## Tech Stack
 
-### **Styling**
+### Framework & Build Tools
 
-- **Tailwind CSS** - Utility-first CSS framework for rapid development
-- **Custom CSS** - Fine-tuned animations and unique design elements
+- **Astro** – Static site generator with minimal JavaScript output
+- **TypeScript** – Type-safe code for better reliability
+- **Vite** – Fast dev server and build system
 
-### **Content Management**
+### Styling
 
-- **Markdown** - Blog posts and rich content
-- **JSON Files** - Structured data for projects, skills, and about information
-- **SVG Icons** - Scalable vector graphics for technology icons
+- **Custom CSS** – Fine-tuned animations and unique styling
 
-### **Development Tools**
+### Content Management
 
-- **Prettier** - Code formatting
-- **ESLint** - Code linting and quality checks
-- **GitHub Pages** - Static site deployment with continuous integration
+- **Markdown** – Blog posts and rich content
+- **JSON** – Structured data for projects, skills, and about info
+- **SVG Icons** – Clean, scalable vector icons
+
+### Dev Tools
+
+- **Prettier** – Consistent code formatting
+- **ESLint** – Code linting and best practices
+- **GitHub Pages** – Deployment via CI/CD
+
+---
 
 ## 📁 Project Structure
 
 ```bash
+.vscode/           # Editor settings and recommendations
+public/             # Static assets
+├── assets/images/  # Contains image of website
+├── sound.mp3       # Click sound
+├── scripts/        # JavaScript Snippets
+├── CNAME           # Web URL
 src/
 ├── components/     # Reusable UI components (Navbar, Footer, Cards)
 ├── pages/          # Route pages (Home, Blog, Projects)
@@ -49,12 +59,7 @@ src/
 ├── content/blog/   # Markdown blog posts
 ├── layouts/        # Layout components for consistent structure
 └── lib/            # Utility functions and constants
-
-public/             # Static assets
-.vscode/           # Editor settings and recommendations
 ```
-
-## 🏃‍♂️ Getting Started
 
 ### Prerequisites
 
@@ -90,7 +95,7 @@ npm run preview
 ### Code Formatting
 
 ```bash
-npm run format
+npm run format # Fix the lint issue
 ```
 
 ### Deploy to GitHub Pages
@@ -99,16 +104,17 @@ npm run format
 npm run deploy
 ```
 
-## 🔧 Recommended VS Code Extensions
+## Recommended VS Code Extensions
 
 - **Astro** (astro-build.astro-vscode) - Astro language support
 - **Prettier** (esbenp.prettier-vscode) - Code formatting
 - **ESLint** (dbaeumer.vscode-eslint) - Code linting
-- **Tailwind CSS IntelliSense** (bradlc.vscode-tailwindcss) - Tailwind utilities
 - **TypeScript Next** (ms-vscode.vscode-typescript-next) - Enhanced TypeScript support
 - **Code Spell Checker** (streetsidesoftware.code-spell-checker) - Spell checking
 
-## 📝 Content Management
+---
+
+> Content Management
 
 ### Adding Blog Posts
 
@@ -127,22 +133,20 @@ npm run deploy
 
 Update the corresponding JSON files in `src/data/` to reflect your current skills and information.
 
-## 🎨 Customization
-
-The site uses a modular component architecture making it easy to:
+## Customization
 
 - Modify colors and typography via Tailwind CSS classes
 - Add new sections by creating components
 - Customize animations and transitions
 - Extend functionality with additional Astro integrations
 
-## 🚀 Performance Features
+## Performance Features
 
 - **Partial Hydration** - Only necessary JavaScript is loaded
 - **Image Optimization** - Automatic image compression and sizing
 - **Minimal JavaScript** - Astro ships less JS to the browser
 - **Static Generation** - Fast loading times with pre-rendered HTML
 
-## 📄 License
+## License
 
 MIT
