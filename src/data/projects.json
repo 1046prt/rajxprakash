@@ -109,7 +109,7 @@
       "title": "University Portal",
       "category": "web",
       "description": "A comprehensive web-based course registration system for universities with modern UI/UX design and full functionality.",
-      "tags": ["HTML","CSS", "JavaScript"],
+      "tags": ["HTML", "CSS", "JavaScript"],
       "links": {
         "live": "https://universityxportal.vercel.app/",
         "github": ""

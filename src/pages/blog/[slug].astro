@@ -4,6 +4,7 @@ import BackIcon from '@/components/common/Back.astro';
 import MainLayout from '@/layouts/MainLayout.astro';
 import '@/assets/styles/index.css';
 import '@/assets/styles/blog/blog-post.css';
+import ClickSound from '@/components/common/UISound.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -25,6 +26,7 @@ const meta = {
 ---
 
 <MainLayout meta={meta}>
+  <ClickSound />
   <div class="container">
     <BackIcon />
     <article class="blog-post">

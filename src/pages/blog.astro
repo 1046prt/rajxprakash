@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import MainLayout from '@/layouts/MainLayout.astro';
 import '@/assets/styles/index.css';
 import '@/assets/styles/blog.css';
+import ClickSound from '@/components/common/UISound.astro';
 
 const blogs = await getCollection('blog');
 const sortedBlogs = [...blogs].sort(
@@ -19,6 +20,7 @@ const meta = {
 ---
 
 <MainLayout meta={meta}>
+  <ClickSound />
   <section class="blog-section">
     <div class="container">
       <div class="section-header">

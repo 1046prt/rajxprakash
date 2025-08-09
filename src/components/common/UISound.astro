@@ -47,7 +47,7 @@ const { volume = 0.3, soundUrl = '/click.mp3', enableOnMobile = true } = Astro.p
 
       try {
         this.audio.currentTime = 0;
-        this.audio.play().catch((e) => {});
+        this.audio.play().catch(() => {});
       } catch (error) {}
     }
 
@@ -60,24 +60,18 @@ const { volume = 0.3, soundUrl = '/click.mp3', enableOnMobile = true } = Astro.p
 
           if (link) {
             const href = link.getAttribute('href');
-            const isNavLink = link.closest('.nav-links') || link.closest('.logo');
 
-            if (isNavLink && (href === '/' || href === '/blog' || href?.startsWith('/blog'))) {
+            // Play sound for all links
+            this.playSound();
+
+            // Delay navigation so sound can be heard
+            if (href && href !== '#' && !href.startsWith('javascript:')) {
               e.preventDefault();
-
-              this.playSound();
-
               setTimeout(() => {
                 window.location.href = href;
               }, 150);
-
-              return;
             }
-
-            if (isNavLink) {
-              this.playSound();
-              return;
-            }
+            return;
           }
 
           const clickableElement = target.closest(
@@ -105,18 +99,15 @@ const { volume = 0.3, soundUrl = '/click.mp3', enableOnMobile = true } = Astro.p
             const link = target.closest('a');
             if (link) {
               const href = link.getAttribute('href');
-              const isNavLink = link.closest('.nav-links') || link.closest('.logo');
+              this.playSound();
 
-              if (isNavLink && (href === '/' || href === '/blog' || href?.startsWith('/blog'))) {
+              if (href && href !== '#' && !href.startsWith('javascript:')) {
                 e.preventDefault();
-                this.playSound();
-
                 setTimeout(() => {
                   window.location.href = href;
                 }, 150);
-
-                return;
               }
+              return;
             }
 
             this.playSound();
