@@ -46,7 +46,6 @@ class ScrollToTop {
     const footerRect = this.footer.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    // If the footer is visible in the viewport
     if (footerRect.top < windowHeight && footerRect.bottom > 0) {
       this.button.classList.add('above-footer');
     } else {
@@ -55,17 +54,14 @@ class ScrollToTop {
   }
 }
 
-// Initialize the ScrollToTop functionality
 function initScrollToTop() {
   new ScrollToTop();
 }
 
-// Multiple ways to ensure DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initScrollToTop);
 } else if (document.readyState === 'interactive' || document.readyState === 'complete') {
   initScrollToTop();
 } else {
-  // Fallback
   window.addEventListener('load', initScrollToTop);
 }
