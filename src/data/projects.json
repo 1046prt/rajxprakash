@@ -96,13 +96,25 @@
       "id": "stock",
       "title": "Stock Dashboard",
       "category": "web",
-      "description": "A web platform with a real-time stock market dashboard of top companies and a service portal connecting skilled workers with clients.",
+      "description": "A web platform with a real-time stock market dashboard of top companies connecting skilled workers with clients.",
       "tags": ["CSS", "JavaScript"],
       "links": {
         "live": "https://stocksdashboard.vercel.app/",
         "github": ""
       },
       "image": "/assets/images/projects/project-8.png"
+    },
+    {
+      "id": "university",
+      "title": "University Portal",
+      "category": "web",
+      "description": "A comprehensive web-based course registration system for universities with modern UI/UX design and full functionality.",
+      "tags": ["HTML","CSS", "JavaScript"],
+      "links": {
+        "live": "universityxportal.vercel.app/",
+        "github": ""
+      },
+      "image": "/assets/images/projects/project-9.png"
     }
   ]
 }
