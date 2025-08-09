@@ -111,7 +111,7 @@
       "description": "A comprehensive web-based course registration system for universities with modern UI/UX design and full functionality.",
       "tags": ["HTML","CSS", "JavaScript"],
       "links": {
-        "live": "universityxportal.vercel.app/",
+        "live": "https://universityxportal.vercel.app/",
         "github": ""
       },
       "image": "/assets/images/projects/project-9.png"
