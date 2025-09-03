@@ -21,6 +21,18 @@
       "image": "/assets/images/projects/project-1.png"
     },
     {
+      "id": "worldexplorer",
+      "title": "WorldExplorer",
+      "category": "web",
+      "description": "An educational and interactive platform for exploring countries, cultures, languages, writing systems and landmarks from the worldwide.",
+      "tags": ["Next.js", "CSS", "TypeScript", "JavaScript", "json"],
+      "links": {
+        "live": "https://theworldexplorer.vercel.app",
+        "github": ""
+      },
+      "image": "/assets/images/projects/worldexplorer.png"
+    },
+    {
       "id": "car-data-app",
       "title": "Cars Data Analysis Dashboard",
       "category": "python",
@@ -36,7 +48,7 @@
       "id": "brand-hub",
       "title": "Brand Hub",
       "category": "web",
-      "description": "A dynamic web application for exploring brands, with real-time search, category filtering, user authentication, and Firebase integration.",
+      "description": "A dynamic web application for exploring brands, with real-time search, category filtering and Firebase integration.",
       "tags": ["HTML", "CSS", "JavaScript", "Firebase"],
       "links": {
         "live": "https://brandxhub.vercel.app/",
