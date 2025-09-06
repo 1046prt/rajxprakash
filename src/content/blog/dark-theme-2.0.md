@@ -41,7 +41,7 @@ Instead of hardcoding colors, define them as CSS variables:
   --accent-color: #0077ff;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-color: #121212;
   --text-color: #ffffff;
   --accent-color: #66ccff;
@@ -113,7 +113,9 @@ Prevent the theme change from being jarring:
 
 ```css
 html {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 body {
@@ -129,7 +131,7 @@ body {
 You can easily add **high-contrast** or **brand-specific** themes:
 
 ```css
-[data-theme="high-contrast"] {
+[data-theme='high-contrast'] {
   --bg-color: #000000;
   --text-color: #ffff00;
   --accent-color: #ff0000;
@@ -157,6 +159,6 @@ You can easily add **high-contrast** or **brand-specific** themes:
 
 ---
 
-**Thanks for reading!**  
+**Thanks for reading!**
 
 ## _**Prakash Raj**_
