@@ -3,19 +3,58 @@ import Navbar from '@/components/common/Navbar.astro';
 import Particles from '@/components/common/Particles.astro';
 import Footer from '@/components/common/Footer.astro';
 import ScrollToTop from '@/components/common/ScrollToTop.astro';
+import CompleteSEO from '@/components/seo/CompleteSEO.astro';
 import '@/assets/styles/scrolltotop.css';
+
+export interface LayoutProps {
+  meta: {
+    title: string;
+    description: string;
+    image?: string;
+    canonicalURL?: string;
+    type?: 'website' | 'article' | 'profile';
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+    keywords?: string[];
+    locale?: string;
+    siteName?: string;
+    noindex?: boolean;
+    structuredDataType?:
+      | 'Website'
+      | 'Person'
+      | 'Article'
+      | 'BlogPosting'
+      | 'Organization'
+      | 'WebPage';
+    additionalStructuredData?: Record<string, any>;
+    wordCount?: number;
+    category?: string;
+    articleBody?: string;
+  };
+}
 
 const { meta } = Astro.props;
 
-const defaultMeta = {
+// Enhanced meta defaults with comprehensive SEO
+const enhancedMeta = {
   title: meta.title,
   description: meta.description,
-  image: meta.image,
-  url: meta.url || Astro.url.href,
-  siteName: meta.siteName,
-  type: 'website',
-  author: '',
-  keywords: '',
+  image: meta.image || '/assets/images/PR.png',
+  canonicalURL: meta.canonicalURL || Astro.url.href,
+  type: meta.type || 'website',
+  author: meta.author || 'Prakash Raj',
+  keywords: meta.keywords || ['Prakash Raj', 'Data Scientist', 'Web Developer', 'Portfolio'],
+  locale: meta.locale || 'en_US',
+  siteName: meta.siteName || 'Prakash Raj - Data Scientist & Web Developer',
+  noindex: meta.noindex || false,
+  publishedTime: meta.publishedTime,
+  modifiedTime: meta.modifiedTime,
+  structuredDataType: meta.structuredDataType,
+  additionalStructuredData: meta.additionalStructuredData || {},
+  wordCount: meta.wordCount,
+  category: meta.category,
+  articleBody: meta.articleBody,
 };
 ---
 
@@ -25,22 +64,35 @@ const defaultMeta = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{defaultMeta.title}</title>
-    <meta name="description" content={defaultMeta.description} />
-    <meta name="author" content={defaultMeta.author} />
-    <meta name="keywords" content={defaultMeta.keywords} />
-    <meta name="robots" content="index, follow" />
-    <meta name="image" content={defaultMeta.image} />
-    <link rel="canonical" href={defaultMeta.url} />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/PR.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- Complete SEO Implementation -->
+    <CompleteSEO
+      title={enhancedMeta.title}
+      description={enhancedMeta.description}
+      image={enhancedMeta.image}
+      canonicalURL={enhancedMeta.canonicalURL}
+      type={enhancedMeta.type}
+      publishedTime={enhancedMeta.publishedTime}
+      modifiedTime={enhancedMeta.modifiedTime}
+      author={enhancedMeta.author}
+      keywords={enhancedMeta.keywords}
+      locale={enhancedMeta.locale}
+      siteName={enhancedMeta.siteName}
+      noindex={enhancedMeta.noindex}
+      structuredDataType={enhancedMeta.structuredDataType}
+      additionalStructuredData={enhancedMeta.additionalStructuredData}
+      wordCount={enhancedMeta.wordCount}
+      category={enhancedMeta.category}
+      articleBody={enhancedMeta.articleBody}
+    />
 
+    <!-- External Stylesheets -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <!-- Performance optimizations -->
+    <link rel="preload" href="/scripts/particles.js" as="script" />
   </head>
   <body>
     <Particles />

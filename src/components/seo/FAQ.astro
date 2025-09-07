@@ -1,0 +1,140 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface FAQProps {
+  faqs: FAQItem[];
+  title?: string;
+}
+
+const { faqs, title = 'Frequently Asked Questions' } = Astro.props;
+
+// Generate FAQ structured data
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(faqStructuredData, null, 2)} />
+
+<!-- Visual FAQ Component -->
+<section class="faq-section">
+  <h2 class="faq-title">{title}</h2>
+  <div class="faq-container">
+    {
+      faqs.map((faq, index) => (
+        <details class="faq-item">
+          <summary class="faq-question">
+            {faq.question}
+            <span class="faq-icon" aria-hidden="true">
+              +
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    margin: 2rem 0;
+  }
+
+  .faq-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+  }
+
+  .faq-container {
+    gap: 1rem;
+  }
+
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    background: #ffffff;
+    transition: all 0.2s ease;
+  }
+
+  .faq-item:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-question {
+    padding: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #374151;
+    transition: color 0.2s ease;
+  }
+
+  .faq-question:hover {
+    color: #1f2937;
+  }
+
+  .faq-icon {
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 1rem 1rem 1rem;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  /* Dark theme support */
+  @media (prefers-color-scheme: dark) {
+    .faq-title {
+      color: #f9fafb;
+    }
+
+    .faq-item {
+      background: #1f2937;
+      border-color: #374151;
+    }
+
+    .faq-item:hover {
+      border-color: #4b5563;
+    }
+
+    .faq-question {
+      color: #e5e7eb;
+    }
+
+    .faq-question:hover {
+      color: #f9fafb;
+    }
+
+    .faq-answer {
+      color: #d1d5db;
+    }
+  }
+</style>

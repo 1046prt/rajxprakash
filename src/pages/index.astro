@@ -27,8 +27,61 @@ const meta = {
   description:
     'Passionate full stack developer specializing in modern web technologies. Creating beautiful, functional websites and applications. View my portfolio, projects, and get in touch.',
   image: '/assets/images/PR.png',
-  url: Astro.url.href,
-  siteName: 'Prakash Raj',
+  canonicalURL: Astro.url.href,
+  type: 'website' as const,
+  keywords: [
+    'Prakash Raj',
+    'Data Scientist',
+    'Web Developer',
+    'Full Stack Developer',
+    'Machine Learning',
+    'Python',
+    'JavaScript',
+    'React',
+    'TypeScript',
+    'Portfolio',
+    'Freelancer',
+    'ML Enthusiast',
+  ],
+  structuredDataType: 'Website' as const,
+  additionalStructuredData: {
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Prakash Raj',
+      jobTitle: 'Data Scientist & Web Developer',
+      description:
+        'Passionate full stack developer specializing in modern web technologies and data science',
+      url: 'https://prakashraj.info',
+      image: 'https://prakashraj.info/assets/images/PR.png',
+      sameAs: [
+        'https://linkedin.com/in/1046prt',
+        'https://github.com/1046prt',
+        'https://x.com/1046prt',
+        'https://www.kaggle.com/prt1046',
+      ],
+      knowsAbout: [
+        'Data Science',
+        'Machine Learning',
+        'Web Development',
+        'Python',
+        'JavaScript',
+        'React',
+        'TypeScript',
+        'Full Stack Development',
+      ],
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://prakashraj.info',
+        },
+      ],
+    },
+  },
 };
 ---
 

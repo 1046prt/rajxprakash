@@ -15,7 +15,44 @@ const meta = {
   description:
     'Exploring the world of web development, sharing insights, and documenting my journey in technology. Read articles about JavaScript, React, web development, and more.',
   image: '/assets/images/Blog.png',
-  url: Astro.url.href,
+  canonicalURL: Astro.url.href,
+  type: 'website' as const,
+  keywords: [
+    'Blog',
+    'Web Development',
+    'Technology',
+    'Programming',
+    'Data Science',
+    'JavaScript',
+    'React',
+    'Python',
+    'Machine Learning',
+    'Tech Insights',
+  ],
+  structuredDataType: 'WebPage' as const,
+  additionalStructuredData: {
+    // Removed breadcrumb data since we're removing breadcrumbs
+    mainEntity: {
+      '@type': 'Blog',
+      name: 'Prakash Raj Blog',
+      description:
+        'Technology blog covering web development, data science, and programming insights',
+      author: {
+        '@type': 'Person',
+        name: 'Prakash Raj',
+      },
+      blogPost: sortedBlogs.map((blog) => ({
+        '@type': 'BlogPosting',
+        headline: blog.data.title,
+        description: blog.data.excerpt,
+        url: `https://prakashraj.info/blog/${blog.slug}`,
+        datePublished: new Date(blog.data.date).toISOString(),
+        image: blog.data.image
+          ? `https://prakashraj.info${blog.data.image}`
+          : 'https://prakashraj.info/assets/images/Blog.png',
+      })),
+    },
+  },
 };
 ---
 

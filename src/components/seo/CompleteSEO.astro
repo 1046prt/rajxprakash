@@ -1,0 +1,132 @@
+---
+import SEOHead from './SEOHead.astro';
+import StructuredData from './StructuredData.astro';
+
+export interface CompleteSEOProps {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: 'website' | 'article' | 'profile';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  keywords?: string[];
+  locale?: string;
+  siteName?: string;
+  twitterHandle?: string;
+  noindex?: boolean;
+  // Additional structured data props
+  structuredDataType?:
+    | 'Website'
+    | 'Person'
+    | 'Article'
+    | 'BlogPosting'
+    | 'Organization'
+    | 'WebPage';
+  additionalStructuredData?: Record<string, any>;
+  wordCount?: number;
+  category?: string;
+  articleBody?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  canonicalURL,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author,
+  keywords,
+  locale,
+  siteName,
+  twitterHandle,
+  noindex,
+  structuredDataType,
+  additionalStructuredData = {},
+  wordCount,
+  category,
+  articleBody,
+} = Astro.props;
+
+// Determine structured data type based on page type
+let finalStructuredDataType = structuredDataType;
+if (!finalStructuredDataType) {
+  if (type === 'article') {
+    finalStructuredDataType = 'BlogPosting';
+  } else if (type === 'website') {
+    finalStructuredDataType = 'Website';
+  } else {
+    finalStructuredDataType = 'WebPage';
+  }
+}
+
+// Prepare structured data
+const structuredData = {
+  title,
+  description,
+  image,
+  url: canonicalURL || Astro.url.href,
+  datePublished: publishedTime,
+  dateModified: modifiedTime,
+  author,
+  keywords,
+  wordCount,
+  category,
+  articleBody,
+  ...additionalStructuredData,
+};
+---
+
+<>
+  <SEOHead
+    title={title}
+    description={description}
+    image={image}
+    canonicalURL={canonicalURL}
+    type={type}
+    publishedTime={publishedTime}
+    modifiedTime={modifiedTime}
+    author={author}
+    keywords={keywords}
+    locale={locale}
+    siteName={siteName}
+    twitterHandle={twitterHandle}
+    noindex={noindex}
+  />
+
+  <StructuredData type={finalStructuredDataType} data={structuredData} />
+
+  {/* Additional SEO enhancements */}
+  {
+    type === 'article' && (
+      <>
+        {/* Article-specific structured data */}
+        <StructuredData
+          type="Person"
+          data={{
+            name: author || 'Prakash Raj',
+          }}
+        />
+      </>
+    )
+  }
+
+  {
+    Astro.url.pathname === '/' && (
+      <>
+        {/* Homepage-specific structured data */}
+        <StructuredData
+          type="Person"
+          data={{
+            name: 'Prakash Raj',
+            description:
+              'Data Scientist & Web Developer specializing in machine learning and full-stack development',
+          }}
+        />
+      </>
+    )
+  }
+</>

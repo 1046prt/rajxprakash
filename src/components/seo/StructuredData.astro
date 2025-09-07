@@ -1,0 +1,141 @@
+---
+export interface StructuredDataProps {
+  type: 'Website' | 'Person' | 'Article' | 'BlogPosting' | 'Organization' | 'WebPage';
+  data: Record<string, any>;
+}
+
+const { type, data } = Astro.props;
+
+// Common website/organization data
+const organizationData = {
+  '@type': 'Organization',
+  name: 'Prakash Raj',
+  url: 'https://prakashraj.info',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://prakashraj.info/assets/images/PR.png',
+    width: 512,
+    height: 512,
+  },
+  sameAs: [
+    'https://linkedin.com/in/1046prt',
+    'https://github.com/1046prt',
+    'https://x.com/1046prt',
+    'https://www.kaggle.com/prt1046',
+  ],
+};
+
+// Person schema data
+const personData = {
+  '@type': 'Person',
+  name: 'Prakash Raj',
+  url: 'https://prakashraj.info',
+  image: 'https://prakashraj.info/assets/images/PR.png',
+  jobTitle: 'Data Scientist & Web Developer',
+  worksFor: organizationData,
+  alumniOf: 'Your University', // You can update this
+  knowsAbout: [
+    'Data Science',
+    'Machine Learning',
+    'Web Development',
+    'Python',
+    'JavaScript',
+    'React',
+    'TypeScript',
+    'Full Stack Development',
+  ],
+  sameAs: [
+    'https://linkedin.com/in/1046prt',
+    'https://github.com/1046prt',
+    'https://x.com/1046prt',
+    'https://www.kaggle.com/prt1046',
+  ],
+};
+
+// Generate structured data based on type
+let structuredData: Record<string, any> = {
+  '@context': 'https://schema.org',
+  '@type': type,
+  ...data,
+};
+
+// Add specific structured data based on type
+if (type === 'Website') {
+  structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Website',
+    name: 'Prakash Raj - Data Scientist & Web Developer',
+    url: 'https://prakashraj.info',
+    description:
+      'Portfolio website of Prakash Raj, showcasing data science projects, web development skills, and technical blog posts.',
+    author: personData,
+    publisher: organizationData,
+    inLanguage: 'en-US',
+    copyrightYear: new Date().getFullYear(),
+    copyrightHolder: personData,
+    ...data,
+  };
+} else if (type === 'Person') {
+  structuredData = {
+    '@context': 'https://schema.org',
+    ...personData,
+    ...data,
+  };
+} else if (type === 'Article' || type === 'BlogPosting') {
+  structuredData = {
+    '@context': 'https://schema.org',
+    '@type': type,
+    headline: data.title || data.headline,
+    description: data.description || data.excerpt,
+    image: data.image
+      ? `https://prakashraj.info${data.image}`
+      : 'https://prakashraj.info/assets/images/PR.png',
+    author: personData,
+    publisher: organizationData,
+    datePublished: data.datePublished || data.publishedTime,
+    dateModified:
+      data.dateModified || data.modifiedTime || data.datePublished || data.publishedTime,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': data.url || Astro.url.href,
+    },
+    url: data.url || Astro.url.href,
+    wordCount: data.wordCount,
+    articleBody: data.articleBody,
+    keywords: data.keywords || [],
+    articleSection: data.category || 'Technology',
+    inLanguage: 'en-US',
+    ...data,
+  };
+} else if (type === 'WebPage') {
+  structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: data.title || data.name,
+    description: data.description,
+    url: data.url || Astro.url.href,
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@type': 'Website',
+      name: 'Prakash Raj - Data Scientist & Web Developer',
+      url: 'https://prakashraj.info',
+    },
+    author: personData,
+    publisher: organizationData,
+    datePublished: data.datePublished,
+    dateModified: data.dateModified,
+    ...data,
+  };
+}
+
+// Clean up undefined values
+const cleanStructuredData = JSON.parse(
+  JSON.stringify(structuredData, (key, value) => {
+    return value === undefined ? null : value;
+  })
+);
+
+const jsonLdScript = JSON.stringify(cleanStructuredData, null, 2);
+---
+
+<script type="application/ld+json" set:html={jsonLdScript} />

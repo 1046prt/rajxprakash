@@ -1,0 +1,115 @@
+---
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+export interface BreadcrumbProps {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+// Generate structured data for breadcrumbs
+const breadcrumbStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: item.url,
+  })),
+};
+---
+
+<!-- Breadcrumb Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbStructuredData, null, 2)} />
+
+<!-- Visual Breadcrumb (optional, you can style this) -->
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol class="breadcrumb-list">
+    {
+      items.map((item, index) => (
+        <li class="breadcrumb-item">
+          {index < items.length - 1 ? (
+            <>
+              <a href={item.url} class="breadcrumb-link">
+                {item.name}
+              </a>
+              <span class="breadcrumb-separator" aria-hidden="true">
+                {' '}
+                /{' '}
+              </span>
+            </>
+          ) : (
+            <span class="breadcrumb-current" aria-current="page">
+              {item.name}
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb {
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb-link {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: #374151;
+    text-decoration: underline;
+  }
+
+  .breadcrumb-current {
+    color: #374151;
+    font-weight: 500;
+  }
+
+  .breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: #9ca3af;
+  }
+
+  /* Dark theme support */
+  @media (prefers-color-scheme: dark) {
+    .breadcrumb-list {
+      color: #9ca3af;
+    }
+
+    .breadcrumb-link {
+      color: #9ca3af;
+    }
+
+    .breadcrumb-link:hover {
+      color: #f3f4f6;
+    }
+
+    .breadcrumb-current {
+      color: #f3f4f6;
+    }
+  }
+</style>

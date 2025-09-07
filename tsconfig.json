@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "types": ["astro/client"],
+    "types": ["astro/client", "node"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es2017", "dom"],
+    "target": "es2017",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": false,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["src/**/*", "eslint.config.js"],
+  "exclude": ["dist"]
 }
