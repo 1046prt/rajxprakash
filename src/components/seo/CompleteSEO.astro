@@ -80,53 +80,45 @@ const structuredData = {
 };
 ---
 
-<>
-  <SEOHead
-    title={title}
-    description={description}
-    image={image}
-    canonicalURL={canonicalURL}
-    type={type}
-    publishedTime={publishedTime}
-    modifiedTime={modifiedTime}
-    author={author}
-    keywords={keywords}
-    locale={locale}
-    siteName={siteName}
-    twitterHandle={twitterHandle}
-    noindex={noindex}
-  />
+<SEOHead
+  title={title}
+  description={description}
+  image={image}
+  canonicalURL={canonicalURL}
+  type={type}
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  author={author}
+  keywords={keywords}
+  locale={locale}
+  siteName={siteName}
+  twitterHandle={twitterHandle}
+  noindex={noindex}
+/>
 
-  <StructuredData type={finalStructuredDataType} data={structuredData} />
+<StructuredData type={finalStructuredDataType} data={structuredData} />
 
-  {/* Additional SEO enhancements */}
-  {
-    type === 'article' && (
-      <>
-        {/* Article-specific structured data */}
-        <StructuredData
-          type="Person"
-          data={{
-            name: author || 'Prakash Raj',
-          }}
-        />
-      </>
-    )
-  }
+{/* Additional SEO enhancements */}
+{
+  type === 'article' && (
+    <StructuredData
+      type="Person"
+      data={{
+        name: author || 'Prakash Raj',
+      }}
+    />
+  )
+}
 
-  {
-    Astro.url.pathname === '/' && (
-      <>
-        {/* Homepage-specific structured data */}
-        <StructuredData
-          type="Person"
-          data={{
-            name: 'Prakash Raj',
-            description:
-              'Data Scientist & Web Developer specializing in machine learning and full-stack development',
-          }}
-        />
-      </>
-    )
-  }
-</>
+{
+  Astro.url.pathname === '/' && (
+    <StructuredData
+      type="Person"
+      data={{
+        name: 'Prakash Raj',
+        description:
+          'Data Scientist & Web Developer specializing in machine learning and full-stack development',
+      }}
+    />
+  )
+}

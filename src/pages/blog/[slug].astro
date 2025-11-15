@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntryBySlug } from 'astro:content';
+import { getCollection, getEntryBySlug, type CollectionEntry } from 'astro:content';
 import BackIcon from '@/components/common/Back.astro';
 import MainLayout from '@/layouts/MainLayout.astro';
 import '@/assets/styles/index.css';
@@ -7,12 +7,13 @@ import '@/assets/styles/blog/blog-post.css';
 import ClickSound from '@/components/common/UISound.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection<'blog'>('blog');
   return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 
 const { slug } = Astro.params;
-const post = await getEntryBySlug('blog', slug);
+// @ts-ignore - Type issue with content collections
+const post = (await getEntryBySlug('blog', slug!)) as CollectionEntry<'blog'>;
 if (!post) throw new Error('Post not found');
 
 const { Content } = await post.render();
