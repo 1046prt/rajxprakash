@@ -91,10 +91,10 @@ const keywords = extractKeywords(content, post.data.title);
 const meta = {
   title: `${post.data.title} | Prakash Raj Blog`,
   description: post.data.excerpt,
-  image: post.data.image 
-    ? (post.data.image.startsWith('http') 
-        ? post.data.image 
-        : `https://prakashraj.info${post.data.image}`)
+  image: post.data.image
+    ? post.data.image.startsWith('http')
+      ? post.data.image
+      : `https://prakashraj.info${post.data.image}`
     : 'https://prakashraj.info/assets/images/Blog.png',
   canonicalURL: Astro.url.href,
   type: 'article' as const,
@@ -235,19 +235,25 @@ const meta = {
     shareBtn.addEventListener('click', async (e) => {
       e.preventDefault();
 
-      const shareData = {
-        title: document.title,
-        text: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
-        url: window.location.href,
-      };
+      // Get comprehensive share data from meta tags
+      const title =
+        document.querySelector('meta[property="og:title"]')?.getAttribute('content') ||
+        document.title;
+      const description =
+        document.querySelector('meta[property="og:description"]')?.getAttribute('content') ||
+        document.querySelector('meta[name="description"]')?.getAttribute('content') ||
+        '';
+      const image =
+        document.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+      const url =
+        document.querySelector('meta[property="og:url"]')?.getAttribute('content') ||
+        window.location.href;
 
-      // Add image to share data if available
-      const ogImage = document.querySelector('meta[property="og:image"]')?.getAttribute('content');
-      if (ogImage) {
-        shareData.files = [new File([], 'image', { type: 'image/jpeg' })];
-        // For platforms that support it, include the image URL
-        shareData.text = `${shareData.text}\n\n${ogImage}`;
-      }
+      const shareData: any = {
+        title: title,
+        text: description,
+        url: url,
+      };
 
       try {
         // Try native Web Share API first
@@ -256,13 +262,14 @@ const meta = {
           return;
         }
 
-        // Fallback: copy to clipboard
+        // Fallback: copy comprehensive share text to clipboard
         if (navigator.clipboard) {
-          await navigator.clipboard.writeText(window.location.href);
+          const shareText = `${title}\\n\\n${description}\\n\\n🔗 ${url}${image ? `\\n\\n🖼️ ${image}` : ''}\\n\\n#PrakashRajBlog #TechBlog`;
+          await navigator.clipboard.writeText(shareText);
 
           // Visual feedback
           const originalTitle = shareBtn.title;
-          shareBtn.title = 'Link copied!';
+          shareBtn.title = 'Share content copied!';
           shareBtn.style.transform = 'scale(0.9)';
 
           setTimeout(() => {
@@ -272,10 +279,18 @@ const meta = {
         }
       } catch (error) {
         console.error('Error sharing:', error);
+        // Ultimate fallback: copy just the URL
+        try {
+          await navigator.clipboard.writeText(url);
+          shareBtn.title = 'Link copied!';
+          setTimeout(() => {
+            shareBtn.title = 'Share this article';
+          }, 2000);
+        } catch (e) {
+          console.error('Failed to copy to clipboard:', e);
+        }
       }
-    });
-
-    // Force button reset on mouse events
+    }); // Force button reset on mouse events
     shareBtn.addEventListener('mouseup', () => {
       shareBtn.blur();
     });
