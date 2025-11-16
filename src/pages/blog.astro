@@ -4,6 +4,7 @@ import MainLayout from '@/layouts/MainLayout.astro';
 import '@/assets/styles/index.css';
 import '@/assets/styles/blog.css';
 import ClickSound from '@/components/common/UISound.astro';
+import { calculateReadingTime, formatReadingTime } from '@/lib/utils';
 
 const blogs = await getCollection('blog');
 const sortedBlogs = [...blogs].sort(
@@ -115,6 +116,12 @@ const meta = {
                             day: 'numeric',
                           })}
                         </time>
+                        <div class="reading-time">
+                          <i class="fas fa-clock" aria-hidden="true" />
+                          <span>
+                            {formatReadingTime(calculateReadingTime(blog.body).readingTime)}
+                          </span>
+                        </div>
                       </div>
                       <h3 class="blog-card-title">
                         <a href={url}>{blog.data.title}</a>
