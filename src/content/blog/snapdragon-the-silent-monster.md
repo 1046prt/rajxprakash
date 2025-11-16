@@ -1,7 +1,7 @@
 ---
 title: 'Snapdragon: The Silent Monster'
 date: '2025-11-15'
-excerpt: 'A deep dive into Snapdragon technology — from mobile to PCs — exploring performance, AI, connectivity, limitations, and why these chips dominate in 2025.'
+excerpt: 'From blistering performance and next-level AI smarts to rock-solid connectivity, these chips have quietly shaped how we live in 2025.'
 image: '/assets/images/blog/blog-9.png'
 ---
 

@@ -161,32 +161,74 @@ body.dark .read-time {
   border-radius: 0.8rem;
   padding: 0.6rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 44px;
   height: 44px;
   box-shadow: var(--shadow-card);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .action-btn:hover {
   background: var(--primary-color);
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 111, 0, 0.3);
   border-color: var(--primary-color);
 }
 
+.action-btn:focus {
+  outline: none;
+  background: var(--card-bg);
+  border-color: var(--bg-lighter);
+  box-shadow: var(--shadow-card);
+}
+
+.action-btn:focus:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 20px rgba(255, 111, 0, 0.3);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.action-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.share-chip:active {
+  transform: scale(0.95);
+}
+
+/* Force reset any persistent states */
+.share-chip:not(:hover):not(:active) {
+  background: var(--card-bg) !important;
+  border-color: var(--bg-lighter) !important;
+  box-shadow: 0 6px 20px transparent !important;
+}
+
+.share-chip:not(:hover):not(:active) .share-text {
+  color: var(--text-light) !important;
+}
+
 .action-btn svg {
   fill: var(--text-light);
-  transition: fill 0.2s ease;
+  transition: fill 0.15s ease;
   width: 18px;
   height: 18px;
+  pointer-events: none;
 }
 
 .action-btn svg path {
   fill: var(--text-light);
-  transition: fill 0.2s ease;
+  transition: fill 0.15s ease;
 }
 
 .action-btn:hover svg {
@@ -195,6 +237,101 @@ body.dark .read-time {
 
 .action-btn:hover svg path {
   fill: var(--primary-light);
+}
+
+/* Share chip design */
+.share-chip {
+  padding: 0.6rem 1rem;
+  gap: 0.5rem;
+  justify-content: center;
+  min-width: auto;
+  border-radius: 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--bg-lighter);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.share-chip:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 20px rgba(255, 111, 0, 0.3);
+}
+
+.share-chip:focus {
+  outline: none;
+  background: var(--card-bg);
+  border-color: var(--bg-lighter);
+}
+
+.share-chip:focus .share-text {
+  color: var(--text-light);
+}
+
+.share-chip:focus:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 20px rgba(255, 111, 0, 0.3);
+}
+
+.share-chip:focus:hover .share-text {
+  color: var(--primary-light);
+}
+
+.share-chip.clicked {
+  background: var(--card-bg) !important;
+  border-color: var(--bg-lighter) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+.share-chip.clicked .share-text {
+  color: var(--text-light) !important;
+}
+
+.share-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.share-chip:hover .share-text {
+  color: var(--primary-light);
+}
+
+body.dark .share-chip {
+  background: var(--card-bg);
+  border-color: var(--bg-lighter);
+}
+
+body.dark .share-chip:focus {
+  background: var(--card-bg);
+  border-color: var(--bg-lighter);
+}
+
+body.dark .share-chip:focus .share-text {
+  color: var(--text-light);
+}
+
+body.dark .action-btn:focus {
+  background: var(--card-bg);
+  border-color: var(--bg-lighter);
+}
+
+body.dark .share-text {
+  color: var(--text-light);
+}
+
+body.dark .share-chip:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+body.dark .share-chip:hover .share-text {
+  color: var(--primary-light);
 }
 
 body.dark .action-btn {
@@ -226,7 +363,7 @@ body.dark .action-btn:hover svg path {
 .bookmark-btn.bookmarked {
   background: var(--primary-color);
   border-color: var(--primary-color);
-  box-shadow: 0 4px 16px rgba(255, 111, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(255, 111, 0, 0.2);
 }
 
 .bookmark-btn.bookmarked svg {
@@ -235,6 +372,11 @@ body.dark .action-btn:hover svg path {
 
 .bookmark-btn.bookmarked svg path {
   fill: var(--primary-light);
+}
+
+.bookmark-btn.bookmarked:hover {
+  background: var(--primary-color);
+  box-shadow: 0 3px 12px rgba(255, 111, 0, 0.3);
 }
 
 body.dark .bookmark-btn.bookmarked {
@@ -423,15 +565,26 @@ body.dark .post-content code {
     gap: 0.75rem;
     align-self: center;
     width: 100%;
+    margin-top: 0.5rem;
   }
   .action-btn {
-    min-width: 36px;
-    height: 36px;
-    padding: 0.4rem;
+    min-width: 44px;
+    height: 44px;
+    padding: 0.6rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   .action-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
+  }
+  .share-chip {
+    padding: 0.5rem 0.8rem;
+    gap: 0.4rem;
+    border-radius: 1.4rem;
+  }
+  .share-text {
+    font-size: 0.8rem;
   }
   .post-meta {
     flex-direction: column;
@@ -475,9 +628,23 @@ body.dark .post-content code {
     font-size: 0.9rem;
   }
   .action-btn {
-    min-width: 40px;
-    height: 40px;
-    padding: 0.5rem;
+    min-width: 48px;
+    height: 48px;
+    padding: 0.7rem;
+    border-radius: 14px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .action-btn:active {
+    transform: scale(0.95);
+  }
+  .share-chip {
+    padding: 0.7rem 1rem;
+    gap: 0.5rem;
+    border-radius: 1.75rem;
+  }
+  .share-text {
+    font-size: 0.9rem;
   }
 }
 
@@ -507,69 +674,53 @@ body.dark .post-content code {
     font-size: 0.8rem;
     padding: 0.2rem 0.6rem;
   }
+  .post-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
   .post-content h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
   .post-content h2 {
     font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
   .post-content h3 {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
-}
 
-/* Bookmark Notification Styles */
-.bookmark-notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--primary-color);
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 1rem;
-  box-shadow:
-    0 8px 32px rgba(255, 111, 0, 0.25),
-    0 2px 8px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  z-index: 1000;
-  font-size: 0.9rem;
-  max-width: 320px;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-}
+  /* Better touch targets for mobile */
+  .title-actions {
+    gap: 0.8rem;
+    margin-top: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
 
-.bookmark-notification.show {
-  opacity: 1;
-}
+  .action-btn {
+    min-width: 40px;
+    height: 36px;
+    padding: 0.4rem;
+    border-radius: 10px;
+    touch-action: manipulation;
+  }
 
-.bookmark-notification.removed {
-  background: var(--primary-color);
-  opacity: 0.8;
-}
+  .action-btn svg {
+    width: 16px;
+    height: 16px;
+  }
 
-.bookmark-notification.added {
-  background: var(--primary-color);
-}
+  .share-chip {
+    padding: 0.4rem 0.65rem;
+    gap: 0.35rem;
+    border-radius: 1rem;
+    height: 36px;
+  }
 
-.bookmark-notification.instruction {
-  background: var(--primary-color);
-}
-
-body.dark .bookmark-notification {
-  color: var(--primary-light);
-}
-
-@media (max-width: 600px) {
-  .bookmark-notification {
-    top: 10px;
-    right: 10px;
-    left: 10px;
-    max-width: none;
-    font-size: 0.85rem;
-    padding: 0.8rem 1rem;
+  .share-text {
+    font-size: 0.75rem;
   }
 }
