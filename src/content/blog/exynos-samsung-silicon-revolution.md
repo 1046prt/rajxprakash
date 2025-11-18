@@ -1,7 +1,7 @@
 ---
-title: 'Exynos: Samsung\'s Silicon Revolution'
-date: '2025-11-17'
-excerpt: 'From cutting-edge manufacturing nodes to AI-powered computing, Samsung\'s Exynos chips are redefining mobile performance and efficiency in 2025.'
+title: "Exynos: Samsung's Silicon Revolution"
+date: '2025-11-20'
+excerpt: "From cutting-edge manufacturing nodes to AI-powered computing, Samsung's Exynos chips are redefining mobile performance and efficiency in 2025."
 image: '/assets/images/blog/blog-10.png'
 ---
 
