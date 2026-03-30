@@ -138,4 +138,22 @@ const cleanStructuredData = JSON.parse(
 const jsonLdScript = JSON.stringify(cleanStructuredData, null, 2);
 ---
 
-<script type="application/ld+json" set:html={jsonLdScript} />
+<script type="application/ld+json" data-schema-type={type} set:html={jsonLdScript} />
+
+<script is:inline>
+  const schemaScripts = document.querySelectorAll(
+    'script[type="application/ld+json"][data-schema-type="Website"]'
+  );
+
+  schemaScripts.forEach((script) => {
+    try {
+      const schema = JSON.parse(script.textContent || '{}');
+      if (schema && typeof schema === 'object' && 'copyrightYear' in schema) {
+        schema.copyrightYear = new Date().getFullYear();
+        script.textContent = JSON.stringify(schema, null, 2);
+      }
+    } catch {
+      // Ignore invalid JSON-LD payloads
+    }
+  });
+</script>
