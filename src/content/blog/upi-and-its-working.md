@@ -40,11 +40,13 @@ NEFT was also unavailable on bank holidays and had limited weekend hours for yea
 NEFT operates on hourly settlement cycles, with transfers typically completing in 30 minutes to a few hours. There's no minimum or maximum amount, and the service has run 24/7 since December 2019.
 
 **Advantages:**
+
 - Safe and bank-regulated
 - No upper transaction limit
 - Good for large non-urgent transfers
 
 **Disadvantages:**
+
 - Batch processing means delays
 - Not suitable for urgent transfers
 - Required internet banking setup which most people lacked
@@ -72,11 +74,13 @@ It was never designed for everyday transactions. Buying groceries, paying rent t
 RTGS settles individual transactions in real time (within minutes), carries a minimum transfer amount of ₹2,00,000 with no upper limit, and has been available 24/7 since December 2020.
 
 **Advantages:**
+
 - Truly real-time for high-value transfers
 - Zero settlement risk
 - Ideal for corporate and institutional use
 
 **Disadvantages:**
+
 - ₹2 lakh minimum makes it useless for everyday payments
 - Not accessible to most retail users
 - Required full internet banking access
@@ -100,12 +104,14 @@ When you initiate a transfer, the instruction goes through NPCI's central switch
 IMPS supports transfers starting from as low as ₹1 up to around ₹5,00,000 depending on the bank, and is available 24/7 throughout the year.
 
 **Advantages:**
+
 - Instant transfers at any hour
 - No minimum amount restriction
 - Available on mobile and internet banking
 - Works on holidays and weekends
 
 **Disadvantages:**
+
 - Required knowing the recipient's account number and IFSC or their MMID
 - Banks charged transaction fees (usually ₹2.5 to ₹25)
 - No unified interface — every bank had its own app or USSD flow
@@ -123,7 +129,7 @@ And that gap — between what was technically possible and what was actually usa
 
 UPI (Unified Payments Interface) was launched by NPCI in April 2016.
 
-The name tells you a lot. *Unified.* One interface. One system. Across every bank.
+The name tells you a lot. _Unified._ One interface. One system. Across every bank.
 
 The goal wasn't to build another payment method. The goal was to build the layer that sits on top of all existing payment infrastructure and makes it invisible.
 
@@ -369,4 +375,4 @@ And the next time your payment succeeds in three seconds, you'll know exactly wh
 
 ---
 
-*Prakash Raj*
+_Prakash Raj_
