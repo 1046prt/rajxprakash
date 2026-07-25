@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import { fileURLToPath } from 'url';
 
 export default defineConfig({
-  site: 'https://prakashraj.info',
+  site: 'https://prakashraj.me',
   base: '/',
   integrations: [tailwind(), react()],
   output: 'static',

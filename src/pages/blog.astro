@@ -46,11 +46,11 @@ const meta = {
         '@type': 'BlogPosting',
         headline: blog.data.title,
         description: blog.data.excerpt,
-        url: `https://prakashraj.info/blog/${blog.slug}`,
+        url: `https://prakashraj.me/blog/${blog.slug}`,
         datePublished: new Date(blog.data.date).toISOString(),
         image: blog.data.image
-          ? `https://prakashraj.info${blog.data.image}`
-          : 'https://prakashraj.info/assets/images/Blog.png',
+          ? `https://prakashraj.me${blog.data.image}`
+          : 'https://prakashraj.me/assets/images/Blog.png',
       })),
     },
   },

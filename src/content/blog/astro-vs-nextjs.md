@@ -27,7 +27,7 @@ They call it "Component Islands Architecture," which sounds fancy but is actuall
 
 ### Building My Portfolio with Astro
 
-When I built [prakashraj.info](https://prakashraj.info) with Astro, it felt like a breath of fresh air. Here's what made me fall in love with it:
+When I built [prakashraj.me](https://prakashraj.me) with Astro, it felt like a breath of fresh air. Here's what made me fall in love with it:
 
 The speed is absolutely insane. My portfolio consistently gets perfect 100/100 scores on PageSpeed Insights, and it loads so fast it's almost jarring if you're used to slower websites.
 

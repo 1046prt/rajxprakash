@@ -10,10 +10,10 @@ const { type, data } = Astro.props;
 const organizationData = {
   '@type': 'Organization',
   name: 'Prakash Raj',
-  url: 'https://prakashraj.info',
+  url: 'https://prakashraj.me',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://prakashraj.info/assets/images/PR.png',
+    url: 'https://prakashraj.me/assets/images/PR.png',
     width: 512,
     height: 512,
   },
@@ -29,8 +29,8 @@ const organizationData = {
 const personData = {
   '@type': 'Person',
   name: 'Prakash Raj',
-  url: 'https://prakashraj.info',
-  image: 'https://prakashraj.info/assets/images/PR.png',
+  url: 'https://prakashraj.me',
+  image: 'https://prakashraj.me/assets/images/PR.png',
   jobTitle: 'Data Scientist & Web Developer',
   worksFor: organizationData,
   alumniOf: 'Your University', // You can update this
@@ -65,7 +65,7 @@ if (type === 'Website') {
     '@context': 'https://schema.org',
     '@type': 'Website',
     name: 'Prakash Raj - Data Scientist & Web Developer',
-    url: 'https://prakashraj.info',
+    url: 'https://prakashraj.me',
     description:
       'Portfolio website of Prakash Raj, showcasing data science projects, web development skills, and technical blog posts.',
     author: personData,
@@ -88,8 +88,8 @@ if (type === 'Website') {
     headline: data.title || data.headline,
     description: data.description || data.excerpt,
     image: data.image
-      ? `https://prakashraj.info${data.image}`
-      : 'https://prakashraj.info/assets/images/PR.png',
+      ? `https://prakashraj.me${data.image}`
+      : 'https://prakashraj.me/assets/images/PR.png',
     author: personData,
     publisher: organizationData,
     datePublished: data.datePublished || data.publishedTime,
@@ -118,7 +118,7 @@ if (type === 'Website') {
     isPartOf: {
       '@type': 'Website',
       name: 'Prakash Raj - Data Scientist & Web Developer',
-      url: 'https://prakashraj.info',
+      url: 'https://prakashraj.me',
     },
     author: personData,
     publisher: organizationData,

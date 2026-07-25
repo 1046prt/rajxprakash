@@ -15,7 +15,7 @@
       "description": "A modern, responsive personal portfolio website featuring animated backgrounds, project filtering, and integrated contact/social links.",
       "tags": ["Astro", "TailWind CSS", "TypeScript", "JavaScript"],
       "links": {
-        "live": "https://prakashraj.info",
+        "live": "https://prakashraj.me",
         "github": ""
       },
       "image": "/assets/images/projects/project-1.png"
