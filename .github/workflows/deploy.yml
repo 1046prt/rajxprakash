@@ -2,10 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [domain/me]
   pull_request:
-    branches: [main]
-
+    branches: [domain/me]
+    
 permissions:
   contents: read
   pages: write
