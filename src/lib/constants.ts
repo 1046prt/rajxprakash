@@ -2,7 +2,7 @@ export const LINKS = {
   github: 'https://github.com/1046prt',
   linkedin: 'https://linkedin.com/in/1046prt',
   medium: 'https://medium.com/@1046prt',
-  kaggle: 'https://www.kaggle.com/prt1046',
+  researchgate: 'https://www.researchgate.net/profile/Prakash-Raj-18',
   email: 'mailto:rajprakash1046@gmail.com',
   phone: 'tel:+919508015377',
   resume: 'https://drive.google.com/file/d/1_sRECd19TUycxLQmA_pVV3DydlgF_Na9/view?usp=sharing',

@@ -1,0 +1,24 @@
+{
+  "title": "Research &",
+  "highlight": "Publications",
+  "papers": [
+    {
+      "title": "A Comprehensive Overview of the Riemann Zeta Function: Historical Development, Mathematical Properties, and Applications",
+      "authors": [{ "name": "Prakash Raj" }],
+      "affiliations": "Scholar, Icfai Tech, The ICFAI University, Jaipur, India",
+      "year": "2026",
+      "abstract": "The Riemann zeta function, introduced by the Swiss mathematician Leonhard Euler and later expanded by Bernhard Riemann, plays a pivotal role in number theory and complex analysis. This review paper explores the historical development of the zeta function, its key mathematical properties, its profound connections to prime numbers, and its broader applications in fields such as quantum mechanics and cryptography. We also examine ongoing research efforts related to the Riemann Hypothesis (RH), particularly in computational verification and new mathematical approaches. The paper aims to provide an accessible yet detailed account of the Riemann zeta function, shedding light on its significance in modern mathematics.",
+      "keywords": [
+        "Analytic Continuation",
+        "Complex Analysis",
+        "Cryptography",
+        "Number Theory",
+        "Prime Number Theorem",
+        "Quantum Mechanics",
+        "Riemann Hypothesis",
+        "Zeta Function"
+      ],
+      "link": "https://www.researchgate.net/publication/405156794_A_Comprehensive_Overview_of_the_Riemann_Zeta_Function_Historical_Development_Mathematical_Properties_and_Applications"
+    }
+  ]
+}

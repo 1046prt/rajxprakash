@@ -30,9 +30,9 @@
       "url": "https://medium.com/@1046prt",
       "icon": "mdi:medium"
     },
-    "kaggle": {
-      "url": "https://www.kaggle.com/prt1046",
-      "icon": "simple-icons:kaggle"
+    "researchgate": {
+      "url": "https://www.researchgate.net/profile/Prakash-Raj-18",
+      "icon": "simple-icons:researchgate"
     }
   },
   "scrollIndicator": {
