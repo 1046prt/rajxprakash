@@ -1,141 +1,251 @@
 ---
 import '@/assets/styles/skills.css';
-import html5Icon from '@/assets/icons/html5.svg';
-import css3Icon from '@/assets/icons/css3.svg';
-import javascriptIcon from '@/assets/icons/javascript.svg';
-import typescriptIcon from '@/assets/icons/typescript.svg';
+import nextjsIcon from '@/assets/icons/nextjs.svg';
+import bootstrapIcon from '@/assets/icons/bootstrap.svg';
+import expressIcon from '@/assets/icons/express.svg';
+import restApiIcon from '@/assets/icons/restapi.svg';
+import jwtIcon from '@/assets/icons/jwt.svg';
+import oauthIcon from '@/assets/icons/oauth.svg';
+import llmIcon from '@/assets/icons/llm.svg';
+import openaiIcon from '@/assets/icons/openai.svg';
+import langchainIcon from '@/assets/icons/langchain.svg';
+import langgraphIcon from '@/assets/icons/langgraph.svg';
+import ragIcon from '@/assets/icons/rag.svg';
+import promptIcon from '@/assets/icons/prompt.svg';
+import embeddingsIcon from '@/assets/icons/embeddings.svg';
+import aiAgentIcon from '@/assets/icons/ai-agent.svg';
+import vectorDbIcon from '@/assets/icons/vectordb.svg';
+import pineconeIcon from '@/assets/icons/pinecone.svg';
+import chromadbIcon from '@/assets/icons/chromadb.svg';
+import faissIcon from '@/assets/icons/faiss.svg';
+import pandasIcon from '@/assets/icons/pandas.svg';
+import numpyIcon from '@/assets/icons/numpy.svg';
+import sklearnIcon from '@/assets/icons/scikit-learn.svg';
+import featureEngineeringIcon from '@/assets/icons/feature-engineering.svg';
+import systemDesignIcon from '@/assets/icons/system-design.svg';
+import scalableIcon from '@/assets/icons/scalable.svg';
+import microservicesIcon from '@/assets/icons/microservices.svg';
+import databaseDesignIcon from '@/assets/icons/database-design.svg';
+import authenticationIcon from '@/assets/icons/authentication.svg';
+import cacheIcon from '@/assets/icons/cache.svg';
+import mvcIcon from '@/assets/icons/mvc.svg';
+import postgresqlIcon from '@/assets/icons/postgresql.svg';
+import redisIcon from '@/assets/icons/redis.svg';
+import firebaseIcon from '@/assets/icons/firebase.svg';
+import dockerIcon from '@/assets/icons/docker.svg';
+import linuxIcon from '@/assets/icons/linux.svg';
+import vercelIcon from '@/assets/icons/vercel.svg';
+import netlifyIcon from '@/assets/icons/netlify.svg';
+import postmanIcon from '@/assets/icons/postman.svg';
 import reactIcon from '@/assets/icons/react.svg';
 import astroIcon from '@/assets/icons/astro.svg';
 import tailwindIcon from '@/assets/icons/tailwind.svg';
 import nodejsIcon from '@/assets/icons/nodejs.svg';
-import jsonIcon from '@/assets/icons/json.svg';
+import phpIcon from '@/assets/icons/php.svg';
 import pythonIcon from '@/assets/icons/python.svg';
-import C_Icon from '@/assets/icons/c_.svg';
-import SQLIcon from '@/assets/icons/sql.svg';
-import RUBYIcon from '@/assets/icons/Ruby.svg';
 import daIcon from '@/assets/icons/da.svg';
 import mlIcon from '@/assets/icons/ml.svg';
 import dvIcon from '@/assets/icons/dv.svg';
-import rIcon from '@/assets/icons/r.svg';
-import javaIcon from '@/assets/icons/java.svg';
-import cIcon from '@/assets/icons/c.svg';
-import phpIcon from '@/assets/icons/php.svg';
+import StreamlitIcon from '@/assets/icons/streamlit.svg';
 import mongodbIcon from '@/assets/icons/mongodb.svg';
 import mysqlIcon from '@/assets/icons/mysql.svg';
+import typescriptIcon from '@/assets/icons/typescript.svg';
+import javaIcon from '@/assets/icons/java.svg';
+import cIcon from '@/assets/icons/c.svg';
+import C_Icon from '@/assets/icons/c_.svg';
+import rIcon from '@/assets/icons/r.svg';
+import SQLIcon from '@/assets/icons/sql.svg';
 import gitIcon from '@/assets/icons/git.svg';
 import githubIcon from '@/assets/icons/github.svg';
-import chromeIcon from '@/assets/icons/chrome.svg';
 import vscodeIcon from '@/assets/icons/vscode.svg';
+import chromeIcon from '@/assets/icons/chrome.svg';
 import figmaIcon from '@/assets/icons/figma.svg';
 import canvaIcon from '@/assets/icons/canva.svg';
-import StreamlitIcon from '@/assets/icons/streamlit.svg';
-import DSAIcon from '@/assets/icons/dsa.svg';
-import OOPIcon from '@/assets/icons/oops.svg';
-// import COAIcon from '@/assets/icons/coa.svg';
-import DAAIcon from '@/assets/icons/daa.svg';
-import TOCIcon from '@/assets/icons/toc.svg';
-import BEEEIcon from '@/assets/icons/beee.svg';
-import IOTIcon from '@/assets/icons/iot.svg';
 
 const skillIcons = {
-  HTML5: html5Icon,
-  CSS3: css3Icon,
-  JavaScript: javascriptIcon,
-  TypeScript: typescriptIcon,
+  // Frontend
   React: reactIcon,
+  'Next.js': nextjsIcon,
   Astro: astroIcon,
   'Tailwind CSS': tailwindIcon,
+  Bootstrap: bootstrapIcon,
+
+  // Backend
   'Node.js': nodejsIcon,
-  JSON: jsonIcon,
-  Python: pythonIcon,
-  'Data Analysis': daIcon,
-  'Machine Learning': mlIcon,
-  'Data Visualization': dvIcon,
-  R: rIcon,
-  Java: javaIcon,
-  C: cIcon,
+  'Express.js': expressIcon,
+  'REST API': restApiIcon,
+  'RESTful APIs': restApiIcon,
   PHP: phpIcon,
-  'C++': C_Icon,
-  SQL: SQLIcon,
-  RUBY: RUBYIcon,
+  'JWT Authentication': jwtIcon,
+  OAuth: oauthIcon,
+
+  // AI & GenAI
+  'Large Language Models': llmIcon,
+  'OpenAI API': openaiIcon,
+  LangChain: langchainIcon,
+  LangGraph: langgraphIcon,
+  RAG: ragIcon,
+  'Prompt Engineering': promptIcon,
+  Embeddings: embeddingsIcon,
+  'AI Agents': aiAgentIcon,
+  'Vector Databases': vectorDbIcon,
+  Pinecone: pineconeIcon,
+  ChromaDB: chromadbIcon,
+  FAISS: faissIcon,
+
+  // Data Science
+  Python: pythonIcon,
+  Pandas: pandasIcon,
+  NumPy: numpyIcon,
+  'Scikit-learn': sklearnIcon,
+  'Machine Learning': mlIcon,
+  'Feature Engineering': featureEngineeringIcon,
+  'Data Analysis': daIcon,
+  'Data Visualization': dvIcon,
+  Streamlit: StreamlitIcon,
+
+  // System Design
+  'System Design': systemDesignIcon,
+  'Scalable Systems': scalableIcon,
+  Microservices: microservicesIcon,
+  'Database Design': databaseDesignIcon,
+  Authentication: authenticationIcon,
+  Caching: cacheIcon,
+  'MVC Architecture': mvcIcon,
+
+  // Databases
   MongoDB: mongodbIcon,
   MySQL: mysqlIcon,
+  PostgreSQL: postgresqlIcon,
+  Redis: redisIcon,
+  Firebase: firebaseIcon,
+
+  // Programming Languages
+  TypeScript: typescriptIcon,
+  Java: javaIcon,
+  C: cIcon,
+  'C++': C_Icon,
+  R: rIcon,
+  SQL: SQLIcon,
+
+  // Cloud & Tools
   Git: gitIcon,
   GitHub: githubIcon,
+  Docker: dockerIcon,
+  Linux: linuxIcon,
+  Vercel: vercelIcon,
+  Netlify: netlifyIcon,
+  'VS Code': vscodeIcon,
+  Postman: postmanIcon,
   'Chrome DevTools': chromeIcon,
-  VSCode: vscodeIcon,
   Figma: figmaIcon,
   Canva: canvaIcon,
-  Streamlit: StreamlitIcon,
-  'Data Structure': DSAIcon,
-  'Object-Oriented': OOPIcon,
-  'Internet of Things': IOTIcon,
-  'Digital Logic': BEEEIcon,
-  'Computer Architecture': cIcon, // Temporarily using C icon until COA icon is fixed
-  'Algorithm Analysis': DAAIcon,
-  'Theory of Computation': TOCIcon,
 };
 
 const skillsData = {
   categories: [
     {
-      name: 'Course Work',
+      name: 'Frontend Frameworks',
       skills: [
-        { name: 'Data Structure', icon: 'fab fa-dsa', iconSvg: 'dsa.svg' },
-        { name: 'Object-Oriented', icon: 'fab fa-oop-alt', iconSvg: 'oops.svg' },
-        { name: 'Internet of Things', icon: 'fab fa-iot-alt', iconSvg: 'iot.svg' },
-        { name: 'Computer Architecture', icon: 'fab fa-coa-alt', iconSvg: 'c.svg' },
-        { name: 'Algorithm Analysis', icon: 'fab fa-DAA-alt', iconSvg: 'daa.svg' },
-        { name: 'Theory of Computation', icon: 'fab fa-coa-alt', iconSvg: 'toc.svg' },
-        { name: 'Digital Logic', icon: 'fab fa-coa-alt', iconSvg: 'beee.svg' },
+        { name: 'React' },
+        { name: 'Next.js' },
+        { name: 'Astro' },
+        { name: 'Tailwind CSS' },
+        { name: 'Bootstrap' },
       ],
     },
     {
-      name: 'Web Development',
+      name: 'Backend Development',
       skills: [
-        { name: 'HTML5', icon: 'fab fa-html5', iconSvg: 'html5.svg' },
-        { name: 'CSS3', icon: 'fab fa-css3-alt', iconSvg: 'css3.svg' },
-        { name: 'JavaScript', icon: 'fab fa-js', iconSvg: 'javascript.svg' },
-        { name: 'TypeScript', icon: 'fab fa-js-square', iconSvg: 'typescript.svg' },
-        { name: 'JSON', icon: 'fas fa-file-code', iconSvg: 'json.svg' },
-        { name: 'Astro', icon: 'fas fa-code', iconSvg: 'astro.svg' },
-        { name: 'React', icon: 'fab fa-react', iconSvg: 'react.svg' },
-        { name: 'Tailwind CSS', icon: 'fab fa-css3-alt', iconSvg: 'tailwind.svg' },
+        { name: 'Node.js' },
+        { name: 'Express.js' },
+        { name: 'REST API' },
+        { name: 'PHP' },
+        { name: 'JWT Authentication' },
+        { name: 'OAuth' },
       ],
     },
     {
-      name: 'Tools & Platforms',
+      name: 'AI & Generative AI',
       skills: [
-        { name: 'MongoDB', icon: 'fas fa-database', iconSvg: 'mongodb.svg' },
-        { name: 'MySQL', icon: 'fas fa-database', iconSvg: 'mysql.svg' },
-        { name: 'Git', icon: 'fab fa-git', iconSvg: 'git.svg' },
-        { name: 'GitHub', icon: 'fab fa-github', iconSvg: 'github.svg' },
-        { name: 'Chrome DevTools', icon: 'fab fa-chrome', iconSvg: 'chrome.svg' },
-        { name: 'VSCode', icon: 'fas fa-code', iconSvg: 'vscode.svg' },
-        { name: 'Figma', icon: 'fab fa-figma', iconSvg: 'figma.svg' },
-        { name: 'Canva', icon: 'fas fa-paint-brush', iconSvg: 'canva.svg' },
+        { name: 'Large Language Models' },
+        { name: 'OpenAI API' },
+        { name: 'LangChain' },
+        { name: 'LangGraph' },
+        { name: 'RAG' },
+        { name: 'Prompt Engineering' },
+        { name: 'Embeddings' },
+        { name: 'AI Agents' },
+        { name: 'Vector Databases' },
+        { name: 'Pinecone' },
+        { name: 'ChromaDB' },
+        { name: 'FAISS' },
       ],
     },
     {
-      name: 'Data Science',
+      name: 'Data Science & Machine Learning',
       skills: [
-        { name: 'Python', icon: 'fab fa-python', iconSvg: 'python.svg' },
-        { name: 'Data Analysis', icon: 'fas fa-chart-bar', iconSvg: 'da.svg' },
-        { name: 'Machine Learning', icon: 'fas fa-brain', iconSvg: 'ml.svg' },
-        { name: 'Data Visualization', icon: 'fas fa-chart-line', iconSvg: 'dv.svg' },
-        { name: 'Streamlit', icon: 'fas fa-laptop-code', iconSvg: 'streamlit.svg' },
+        { name: 'Python' },
+        { name: 'Pandas' },
+        { name: 'NumPy' },
+        { name: 'Scikit-learn' },
+        { name: 'Machine Learning' },
+        { name: 'Feature Engineering' },
+        { name: 'Data Analysis' },
+        { name: 'Data Visualization' },
+        { name: 'Streamlit' },
+      ],
+    },
+    {
+      name: 'System Design & Architecture',
+      skills: [
+        { name: 'System Design' },
+        { name: 'Scalable Systems' },
+        { name: 'Microservices' },
+        { name: 'RESTful APIs' },
+        { name: 'Database Design' },
+        { name: 'Authentication' },
+        { name: 'Caching' },
+        { name: 'MVC Architecture' },
+      ],
+    },
+    {
+      name: 'Databases',
+      skills: [
+        { name: 'MongoDB' },
+        { name: 'MySQL' },
+        { name: 'PostgreSQL' },
+        { name: 'Redis' },
+        { name: 'Firebase' },
       ],
     },
     {
       name: 'Programming Languages',
       skills: [
-        { name: 'Java', icon: 'fab fa-java', iconSvg: 'java.svg' },
-        { name: 'C', icon: 'fas fa-c', iconSvg: 'c.svg' },
-        { name: 'R', icon: 'fas fa-r', iconSvg: 'r.svg' },
-        { name: 'PHP', icon: 'fas fa-code', iconSvg: 'php.svg' },
-        { name: 'C++', icon: 'fas fa-code', iconSvg: 'c_.svg' },
-        { name: 'RUBY', icon: 'fas fa-code', iconSvg: 'Ruby.svg' },
-        { name: 'SQL', icon: 'fas fa-code', iconSvg: 'sql.svg' },
+        { name: 'Python' },
+        { name: 'TypeScript' },
+        { name: 'Java' },
+        { name: 'C' },
+        { name: 'C++' },
+        { name: 'R' },
+        { name: 'PHP' },
+        { name: 'SQL' },
+      ],
+    },
+    {
+      name: 'Cloud, DevOps & Tools',
+      skills: [
+        { name: 'Git' },
+        { name: 'GitHub' },
+        { name: 'Docker' },
+        { name: 'Linux' },
+        { name: 'Vercel' },
+        { name: 'Netlify' },
+        { name: 'VS Code' },
+        { name: 'Postman' },
+        { name: 'Chrome DevTools' },
+        { name: 'Figma' },
+        { name: 'Canva' },
       ],
     },
   ],
