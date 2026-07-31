@@ -3,130 +3,144 @@
   "highlight": "Projects",
   "filters": [
     { "id": "all", "text": "All" },
-    { "id": "web", "text": "Web Development" },
-    { "id": "ml", "text": "Machine Learning" },
-    { "id": "python", "text": "Python" }
+    { "id": "web", "text": "Web Application" },
+    { "id": "ml", "text": "Algorithmic Solution" },
+    { "id": "python", "text": "Pythonic Microservice" },
+    { "id": "security", "text": "Security" },
+    { "id": "systems", "text": "Process Orchestrator" }
   ],
   "projects": [
-    {
-      "id": "portfolio",
-      "title": "Portfolio Website",
-      "category": "web",
-      "description": "A modern, responsive personal portfolio website featuring animated backgrounds, project filtering, and integrated contact/social links.",
-      "tags": ["Astro", "TailWind CSS", "TypeScript", "JavaScript"],
-      "links": {
-        "live": "https://prakashraj.me",
-        "github": ""
-      },
-      "image": "/assets/images/projects/project-1.png"
-    },
     {
       "id": "worldexplorer",
       "title": "WorldExplorer",
       "category": "web",
-      "description": "An educational and interactive platform for exploring countries, cultures, languages, writing systems and landmarks from the worldwide.",
-      "tags": ["Next.js", "CSS", "TypeScript", "JavaScript", "json"],
+      "description": "An educational and interactive platform for exploring countries, cultures, languages, writing systems, and landmarks from around the world. Discover fascinating traditions, historical events, national symbols, and geographical wonders.",
+  "tags": ["Next.js", "CSS", "TypeScript", "JavaScript", "JSON"],
       "links": {
         "live": "https://theworldexplorer.vercel.app",
-        "github": ""
+        "github": "https://github.com/1046prt/worldexplorer"
       },
       "image": "/assets/images/projects/worldexplorer.png"
     },
     {
-      "id": "car-data-app",
-      "title": "Cars Data Analysis Dashboard",
-      "category": "python",
-      "description": "An interactive Streamlit web app that explores luxury car dataset features with animated charts, dark/light theme, and downloadable reports.",
-      "tags": ["Python", "Streamlit", "Pandas", "Data Visualization"],
-      "links": {
-        "live": "https://dashboardxcar.streamlit.app/",
-        "github": ""
-      },
-      "image": "/assets/images/projects/project-2.png"
-    },
-    {
-      "id": "brand-hub",
-      "title": "Brand Hub",
-      "category": "web",
-      "description": "A dynamic web application for exploring brands, with real-time search, category filtering and Firebase integration.",
-      "tags": ["HTML", "CSS", "JavaScript", "Firebase"],
-      "links": {
-        "live": "https://brandxhub.vercel.app/",
-        "github": ""
-      },
-      "image": "/assets/images/projects/project-3.png"
-    },
-    {
-      "id": "coffee",
-      "title": "Midnight Drip ",
-      "category": "web",
-      "description": "A modern, responsive landing page for a fictional premium coffee brand, showcasing products information.",
-      "tags": ["HTML", "CSS", "JavaScript"],
-      "links": {
-        "live": "https://midnightdrip.vercel.app/",
-        "github": ""
-      },
-      "image": "/assets/images/projects/project-4.png"
-    },
-    {
-      "id": "spam-detection-python",
-      "title": "Spam Detection Python Scripts",
-      "category": "ml",
-      "description": "A collection of Python scripts and datasets for SMS spam detection using machine learning and natural language processing.",
-      "tags": ["Python", "scikit-learn", "NLTK", "pandas"],
-      "links": {
-        "live": "https://spamxdetector.vercel.app/",
-        "github": ""
-      },
-      "image": "/assets/images/projects/project-5.png"
-    },
-    {
-      "id": "car-website",
-      "title": "LuxuryAutos",
-      "category": "web",
-      "description": "A modern, responsive landing page for a fictional car brand, highlighting features and design.",
-      "tags": ["HTML", "CSS"],
-      "links": {
-        "live": "https://luxuryautos.vercel.app",
-        "github": ""
-      },
-      "image": "/assets/images/projects/project-6.png"
-    },
-    {
-      "id": "python-practice",
-      "title": "Python Interactive Scripts",
-      "category": "python",
-      "description": "A collection of interactive Python scripts and projects, including sorting algorithms, games, and algorithm visualizations.",
-      "tags": ["Python", "TC", "Sorting", "Games"],
+      "id": "threatlens",
+      "title": "ThreatLens",
+      "category": "security",
+      "description": "A lightweight network intrusion detection system for LAN environments, combining a Django web dashboard with an ML-based detection engine — covering real-time packet capture, feature extraction, model inference, rule generation, and IPS integration.",
+      "tags": ["Django", "Python", "Network Security", "REST API"],
       "links": {
         "live": "",
-        "github": "https://github.com/1046prt/programming_with_python"
-      },
-      "image": "/assets/images/projects/project-7.png"
-    },
-    {
-      "id": "stock",
-      "title": "Stock Dashboard",
-      "category": "web",
-      "description": "A web platform with a real-time stock market dashboard of top companies connecting skilled workers with clients.",
-      "tags": ["CSS", "JavaScript"],
-      "links": {
-        "live": "https://stocksdashboard.vercel.app/",
         "github": ""
       },
-      "image": "/assets/images/projects/project-8.png"
+      "image": "/assets/images/projects/threatlens.png"
     },
     {
-      "id": "university",
-      "title": "University Portal",
-      "category": "web",
-      "description": "A comprehensive web-based course registration system for universities with modern UI/UX design and full functionality.",
-      "tags": ["HTML", "CSS", "JavaScript"],
+      "id": "byteplay",
+      "title": "byteplay",
+      "category": "security",
+      "description": "A multi-platform network packet analyzer and replayer that lets you capture, edit, and replay raw TCP/UDP packets to test server resilience — with byte-level hex diffing, going beyond passive tools like Wireshark or application-layer tools like Burp Suite and Postman.",
+      "tags": ["Networking", "Packet Capture", "TCP/UDP", "GUI"],
       "links": {
-        "live": "https://universityxportal.vercel.app/",
+        "live": "",
+        "github": "https://github.com/1046prt/byteplay"
+      },
+      "image": "/assets/images/projects/byteplay.png"
+    },
+    {
+      "id": "clm",
+      "title": "Contract Lifecycle Management Platform",
+      "category": "web",
+      "description": "An enterprise-grade, AI-augmented contract management system covering the full lifecycle of commercial agreements — centralized repository with version control, a clause library and template engine, configurable multi-stage approval workflows, LLM-driven contract intelligence.",
+      "tags": ["Django", "PyPDF2", "python-docx", "Workflow Engine"],
+      "links": {
+        "live": "",
+        "github": "https://github.com/1046prt/clm"
+      },
+      "image": "/assets/images/projects/clm.png"
+    },
+    {
+      "id": "optitest",
+      "title": "OptiTest — Split Testing Suite",
+      "category": "python",
+      "description": "A frequentist A/B testing analysis tool: takes visitor and conversion counts for control and treatment groups and runs a two-proportion z-test, confidence interval on lift, effect size (Cohen's h), power analysis with required sample size, and a plain-English decision recommendation, exportable as Markdown/JSON reports via a Streamlit dashboard or Python API.",
+      "tags": ["Python", "Streamlit", "Statistics", "A/B Testing"],
+      "links": {
+        "live": "",
+        "github": "https://github.com/1046prt/optitest"
+      },
+      "image": "/assets/images/projects/optitest.png"
+    },
+    {
+      "id": "lfa-platform",
+      "title": "LFA Platform — Logical Framework Design for Education NGOs",
+      "category": "web",
+      "description": "A web platform helping education NGOs design programs using the Common Logical Framework Approach, guiding users through a 7-step wizard across 9 themes with ready-made templates, PDF export, auto-save, authentication, an analytics dashboard, and offline-first PWA support.",
+      "tags": ["Next.js", "React", "TypeScript", "Supabase"],
+      "links": {
+        "live": "https://lfa2026.vercel.app",
+        "github": "https://github.com/1046prt/lfa-platform"
+      },
+      "image": "/assets/images/projects/lfa-platform.png"
+    },
+    {
+      "id": "flint",
+      "title": "Flint",
+      "category": "systems",
+      "description": "A transpilation-oriented DSL compiler toolchain with an embedded REPL runtime, built on a custom lexer-parser-semantic pipeline: tokenization, recursive-descent AST parsing, semantic validation, and tree-walking execution, supporting closures, higher-order functions, and structural typing, with both an interactive Rich-based REPL and batch file execution.",
+      "tags": ["Python", "Compilers", "DSL", "Interpreters", "REPL"],
+      "links": {
+        "live": "",
+        "github": "https://github.com/1046prt/flint"
+      },
+      "image": "/assets/images/projects/flint.png"
+    },
+    {
+      "id": "glue",
+      "title": "Glue — MLOps Project",
+      "category": "ml",
+      "description": "A production-grade ML system for predicting customer churn with a full MLOps lifecycle: leakage-safe feature engineering, a LightGBM model with MLflow experiment tracking, SHAP explanations, FastAPI serving (real-time + batch), PSI/KS drift detection, Airflow-orchestrated retraining, and a GitHub Actions CI/CD pipeline.",
+      "tags": ["LightGBM", "FastAPI", "Airflow", "SHAP", "Evidently"],
+      "links": {
+        "live": "",
         "github": ""
       },
-      "image": "/assets/images/projects/project-9.png"
+      "image": "/assets/images/projects/glue.png"
+    },
+    {
+      "id": "route",
+      "title": "route",
+      "category": "web",
+      "description": "An interactive API learning platform covering REST, GraphQL, SOAP, gRPC, and WebSockets across 12 hands-on modules — auth, CRUD, file uploads, webhooks, WebSocket chat, versioning, and more — with live in-browser testing, auto-generated docs, and zero external services or API keys required. The backend is built with FastAPI and the frontend with React.",
+      "tags": ["FastAPI", "REST", "GraphQL", "WebSockets", "JWT"],
+      "links": {
+        "live": "",
+        "github": ""
+      },
+      "image": "/assets/images/projects/route.png"
+    },
+    {
+      "id": "delta",
+      "title": "Delta — Satellite Change Detection",
+      "category": "ml",
+      "description": "A Siamese U-Net model for detecting urban change from Sentinel-2 satellite imagery, trained on the OSCD100 dataset and applied to a real-world case study of urban development in Patna, India — producing binary change masks from before/after image pairs.",
+      "tags": ["PyTorch", "Siamese U-Net", "Remote Sensing"],
+      "links": {
+        "live": "",
+        "github": ""
+      },
+      "image": "/assets/images/projects/delta.png"
+    },
+    {
+      "id": "zk-secrets-manager",
+      "title": "Ageis",
+      "category": "security",
+      "description": "A secrets management system where the server never has access to plaintext credentials or decryption keys — all encryption and decryption happens client-side using envelope encryption, X25519 key wrapping for multi-party access, and Argon2id key derivation.",
+      "tags": ["Cryptography", "AES-256-GCM", "X25519", "Argon2id"],
+      "links": {
+        "live": "",
+        "github": ""
+      },
+      "image": "/assets/images/projects/ageis.png"
     }
   ]
 }
