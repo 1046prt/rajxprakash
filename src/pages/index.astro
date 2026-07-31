@@ -10,6 +10,7 @@ import '@/assets/styles/experience.css';
 import '@/assets/styles/projects.css';
 import '@/assets/styles/contact.css';
 import ClickSound from '@/components/common/UISound.astro';
+import { Icon } from 'astro-icon/components';
 
 //JSON data
 import heroData from '@/data/hero.json';
@@ -56,7 +57,7 @@ const meta = {
       sameAs: [
         'https://linkedin.com/in/1046prt',
         'https://github.com/1046prt',
-        'https://x.com/1046prt',
+        'https://medium.com/@1046prt',
         'https://www.kaggle.com/prt1046',
       ],
       knowsAbout: [
@@ -119,7 +120,7 @@ const meta = {
             heroData.socialLinks &&
               Object.entries(heroData.socialLinks).map(([key, social]) => (
                 <a href={social.url} target="_blank" class="social-icon">
-                  <i class={social.icon} />
+                  <Icon name={social.icon} />
                 </a>
               ))
           }
@@ -335,7 +336,7 @@ const meta = {
             {
               contactData.socialLinks.map((social) => (
                 <a href={social.url} target="_blank" class="social-icon-large">
-                  <i class={social.icon} aria-hidden="true" />
+                  <Icon name={social.icon} aria-hidden="true" />
                 </a>
               ))
             }

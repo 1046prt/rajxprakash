@@ -1,7 +1,7 @@
 export const LINKS = {
   github: 'https://github.com/1046prt',
   linkedin: 'https://linkedin.com/in/1046prt',
-  twitter: 'https://x.com/1046prt',
+  medium: 'https://medium.com/@1046prt',
   kaggle: 'https://www.kaggle.com/prt1046',
   email: 'mailto:rajprakash1046@gmail.com',
   phone: 'tel:+919508015377',

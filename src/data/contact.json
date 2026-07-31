@@ -26,28 +26,28 @@
   ],
   "socialLinks": [
     {
-      "name": "Email",
-      "url": "mailto:rajprakash1046@gmail.com",
-      "icon": "fa fa-envelope",
-      "type": "email"
+      "name": "X",
+      "url": "https://x.com/1046prt",
+      "icon": "simple-icons:x",
+      "type": "x"
     },
     {
       "name": "WhatsApp",
       "url": "https://wa.me/919508015377?text=Hi%20Prakash",
-      "icon": "fab fa-whatsapp",
+      "icon": "simple-icons:whatsapp",
       "type": "whatsapp"
     },
     {
       "name": "Instagram",
       "url": "https://instagram.com/1046prt/",
-      "icon": "fab fa-instagram",
+      "icon": "simple-icons:instagram",
       "type": "instagram"
     },
     {
-      "name": "Twitter",
-      "url": "https://x.com/1046prt",
-      "icon": "fab fa-twitter",
-      "type": "twitter"
+      "name": "Medium",
+      "url": "https://medium.com/@1046prt",
+      "icon": "mdi:medium",
+      "type": "medium"
     }
   ]
 }

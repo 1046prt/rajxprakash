@@ -19,6 +19,11 @@
   --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.1);
   --about-bg: rgba(0, 0, 0, 0.03);
   --contact-bg: rgba(0, 0, 0, 0.03);
+  --icon-nextjs: #000000;
+  --icon-express: #000000;
+  --icon-github: #181717;
+  --icon-vercel: #000000;
+  --icon-pandas: #150458;
   --section-padding: 60px 0;
   --element-margin: 2rem;
   --transition-fast: 0.8s ease;
@@ -45,6 +50,11 @@
   --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.18);
   --about-bg: rgba(0, 0, 0, 0.3);
   --contact-bg: rgba(0, 0, 0, 0.3);
+  --icon-nextjs: #ffffff;
+  --icon-express: #ffffff;
+  --icon-github: #ffffff;
+  --icon-vercel: #ffffff;
+  --icon-pandas: #ffffff;
 }
 
 * {
