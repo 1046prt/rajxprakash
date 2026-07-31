@@ -1,4 +1,4 @@
-# [Prakash raj](https://prakashraj.info) Portfolio Website
+# [Prakash raj](https://prakashraj.me) Portfolio Website
 
 Welcome to my personal portfolio built with [Astro](https://astro.build/), a fast, modern static site framework. This site showcases my projects, skills, and blog content in a clean, responsive layout with a professional dark theme and smooth animations.
 

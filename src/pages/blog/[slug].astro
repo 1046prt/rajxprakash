@@ -94,8 +94,8 @@ const meta = {
   image: post.data.image
     ? post.data.image.startsWith('http')
       ? post.data.image
-      : `https://prakashraj.info${post.data.image}`
-    : 'https://prakashraj.info/assets/images/Blog.png',
+      : `https://prakashraj.me${post.data.image}`
+    : 'https://prakashraj.me/assets/images/Blog.png',
   canonicalURL: Astro.url.href,
   type: 'article' as const,
   publishedTime: new Date(post.data.date).toISOString(),
@@ -115,7 +115,7 @@ const meta = {
       name: 'Prakash Raj',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://prakashraj.info/assets/images/PR.png',
+        url: 'https://prakashraj.me/assets/images/PR.png',
       },
     },
   },

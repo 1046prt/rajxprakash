@@ -20,19 +20,19 @@
   "socialLinks": {
     "linkedin": {
       "url": "https://linkedin.com/in/1046prt",
-      "icon": "fab fa-linkedin-in"
+      "icon": "simple-icons:linkedin"
     },
     "github": {
       "url": "https://github.com/1046prt",
-      "icon": "fab fa-github"
+      "icon": "simple-icons:github"
     },
-    "twitter": {
-      "url": "https://x.com/1046prt",
-      "icon": "fab fa-twitter"
+    "medium": {
+      "url": "https://medium.com/@1046prt",
+      "icon": "mdi:medium"
     },
-    "kaggle": {
-      "url": "https://www.kaggle.com/prt1046",
-      "icon": "fab fa-kaggle"
+    "researchgate": {
+      "url": "https://www.researchgate.net/profile/Prakash-Raj-18",
+      "icon": "simple-icons:researchgate"
     }
   },
   "scrollIndicator": {

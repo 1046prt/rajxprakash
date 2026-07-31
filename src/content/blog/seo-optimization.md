@@ -9,7 +9,7 @@ image: '/assets/images/blog/blog-8.png'
 
 Let me guess – you've built an amazing website, but nobody can find it on Google. Welcome to the club! I've been there, staring at Google Analytics showing zero organic traffic while wondering if search engines even knew my site existed.
 
-Here's the thing about SEO: everyone makes it sound way more complicated than it actually is. After building and optimizing sites with everything from Astro (like my portfolio at [prakashraj.info](https://prakashraj.info)) to Next.js apps (like [The World Explorer](https://theworldexplorer.vercel.app)), I've learned that good SEO comes down to a few core principles that work regardless of your tech stack.
+Here's the thing about SEO: everyone makes it sound way more complicated than it actually is. After building and optimizing sites with everything from Astro (like my portfolio at [prakashraj.me](https://prakashraj.me)) to Next.js apps (like [The World Explorer](https://theworldexplorer.vercel.app)), I've learned that good SEO comes down to a few core principles that work regardless of your tech stack.
 
 I'm going to share the exact strategies that helped my sites consistently rank on the first page of Google. No fluff, no outdated tactics, just proven techniques that work in 2025.
 
@@ -546,7 +546,7 @@ After optimizing dozens of websites, here's what I've learned:
 
 Check out how I implemented these strategies:
 
-- [My Astro Portfolio](https://prakashraj.info) – Perfect performance scores
+- [My Astro Portfolio](https://prakashraj.me) – Perfect performance scores
 - [Next.js App](https://theworldexplorer.vercel.app) – Dynamic SEO done right
 
 Both sites consistently rank on the first page for their target keywords using exactly these techniques.

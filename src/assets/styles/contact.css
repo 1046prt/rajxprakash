@@ -88,7 +88,8 @@
   transition: all var(--transition-fast);
 }
 
-.social-icon-large i {
+.social-icon-large i,
+.social-icon-large svg {
   font-size: 2rem;
   color: var(--primary-color);
   transition: color 0.2s;
@@ -100,7 +101,8 @@
   transform: translateY(-2px);
 }
 
-.social-icon-large:hover i {
+.social-icon-large:hover i,
+.social-icon-large:hover svg {
   color: #fff;
 }
 
@@ -149,7 +151,8 @@
     width: 3.5rem;
     height: 3.5rem;
   }
-  .social-icon-large i {
+  .social-icon-large i,
+  .social-icon-large svg {
     font-size: 1.8rem;
   }
 }

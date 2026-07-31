@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 
 export async function GET() {
   const blogPosts = await getCollection('blog');
-  const siteURL = 'https://prakashraj.info';
+  const siteURL = 'https://prakashraj.me';
 
   // Static pages
   const staticPages = [

@@ -3,48 +3,107 @@
   "highlight": "Skills",
   "categories": [
     {
-      "name": "Web Development",
+      "name": "Frontend Frameworks",
       "skills": [
-        { "name": "HTML5", "icon": "fab fa-html5", "iconSvg": "html5.svg" },
-        { "name": "CSS3", "icon": "fab fa-css3-alt", "iconSvg": "css3.svg" },
-        { "name": "JavaScript", "icon": "fab fa-js", "iconSvg": "javascript.svg" },
-        { "name": "TypeScript", "icon": "fab fa-js-square", "iconSvg": "typescript.svg" },
-        { "name": "JSON", "icon": "fas fa-file-code", "iconSvg": "json.svg" },
-        { "name": "Astro", "icon": "fas fa-code", "iconSvg": "astro.svg" },
-        { "name": "React", "icon": "fab fa-react", "iconSvg": "react.svg" },
-        { "name": "Tailwind CSS", "icon": "fab fa-css3-alt", "iconSvg": "tailwind.svg" }
+        { "name": "React", "icon": "simple-icons:react", "color": "#61DAFB" },
+        { "name": "Next.js", "icon": "simple-icons:nextdotjs", "color": "var(--icon-nextjs)" },
+        { "name": "Astro", "icon": "simple-icons:astro", "color": "#FF5D01" },
+        { "name": "Tailwind CSS", "icon": "simple-icons:tailwindcss", "color": "#06B6D4" },
+        { "name": "Bootstrap", "icon": "simple-icons:bootstrap", "color": "#7952B3" }
       ]
     },
     {
-      "name": "Data Science",
+      "name": "Backend Development",
       "skills": [
-        { "name": "Python", "icon": "fab fa-python", "iconSvg": "python.svg" },
-        { "name": "Data Analysis", "icon": "fas fa-chart-bar", "iconSvg": "da.svg" },
-        { "name": "Machine Learning", "icon": "fas fa-brain", "iconSvg": "ml.svg" },
-        { "name": "Data Visualization", "icon": "fas fa-chart-line", "iconSvg": "dv.svg" },
-        { "name": "Streamlit", "icon": "fas fa-laptop-code", "iconSvg": "streamlit.svg" }
+        { "name": "Node.js", "icon": "simple-icons:nodedotjs", "color": "#5FA04E" },
+        { "name": "Express.js", "icon": "simple-icons:express", "color": "var(--icon-express)" },
+        { "name": "REST API", "icon": "tabler:api", "color": "#10B981" },
+        { "name": "PHP", "icon": "simple-icons:php", "color": "#777BB4" },
+        { "name": "JWT Authentication", "icon": "simple-icons:jsonwebtokens", "color": "#8B5CF6" },
+        { "name": "OAuth", "icon": "tabler:key", "color": "#F59E0B" }
       ]
     },
     {
-      "name": "Programming Language",
+      "name": "AI & Generative AI",
       "skills": [
-        { "name": "Java", "icon": "fab fa-java", "iconSvg": "java.svg" },
-        { "name": "C", "icon": "fas fa-c", "iconSvg": "c.svg" },
-        { "name": "R", "icon": "fas fa-r", "iconSvg": "r.svg" },
-        { "name": "php", "icon": "fas fa-code", "iconSvg": "php.svg" }
+        { "name": "Large Language Models", "icon": "lucide:bot", "color": "#7C3AED" },
+        { "name": "OpenAI API", "icon": "simple-icons:openai", "color": "#10A37F" },
+        { "name": "LangChain", "icon": "simple-icons:langchain", "color": "#0284C7" },
+        { "name": "LangGraph", "icon": "simple-icons:langgraph", "color": "#6366F1" },
+        { "name": "RAG", "icon": "tabler:search", "color": "#22C55E" },
+        { "name": "Prompt Engineering", "icon": "tabler:message-code", "color": "#F59E0B" },
+        { "name": "Embeddings", "icon": "tabler:vector", "color": "#A855F7" },
+        { "name": "AI Agents", "icon": "tabler:robot", "color": "#D946EF" },
+        { "name": "Vector Databases", "icon": "mdi:database-search", "color": "#06B6D4" },
+        { "name": "Pinecone", "icon": "tabler:leaf", "color": "#84CC16" },
+        { "name": "ChromaDB", "icon": "mdi:palette-swatch", "color": "#EC4899" },
+        { "name": "FAISS", "icon": "mdi:layers-triple", "color": "#1877F2" }
       ]
     },
     {
-      "name": "Tools & Platforms",
+      "name": "Data Science & Machine Learning",
       "skills": [
-        { "name": "MongoDB", "icon": "fas fa-database", "iconSvg": "mongodb.svg" },
-        { "name": "MySQL", "icon": "fas fa-database", "iconSvg": "mysql.svg" },
-        { "name": "Git", "icon": "fab fa-git", "iconSvg": "git.svg" },
-        { "name": "GitHub", "icon": "fab fa-github", "iconSvg": "github.svg" },
-        { "name": "Chrome DevTools", "icon": "fab fa-chrome", "iconSvg": "chrome.svg" },
-        { "name": "VSCode", "icon": "fas fa-code", "iconSvg": "vscode.svg" },
-        { "name": "Figma", "icon": "fab fa-figma", "iconSvg": "figma.svg" },
-        { "name": "Canva", "icon": "fas fa-paint-brush", "iconSvg": "canva.svg" }
+        { "name": "Python", "icon": "simple-icons:python", "color": "#3776AB" },
+        { "name": "Pandas", "icon": "simple-icons:pandas", "color": "var(--icon-pandas)" },
+        { "name": "NumPy", "icon": "simple-icons:numpy", "color": "#4DABCF" },
+        { "name": "Scikit-learn", "icon": "simple-icons:scikitlearn", "color": "#F7931E" },
+        { "name": "Machine Learning", "icon": "tabler:brain", "color": "#F43F5E" },
+        { "name": "Feature Engineering", "icon": "tabler:adjustments", "color": "#14B8A6" },
+        { "name": "Data Analysis", "icon": "mdi:chart-bar", "color": "#3B82F6" },
+        { "name": "Data Visualization", "icon": "mdi:chart-line", "color": "#8B5CF6" },
+        { "name": "Streamlit", "icon": "simple-icons:streamlit", "color": "#FF4B4B" }
+      ]
+    },
+    {
+      "name": "System Design & Architecture",
+      "skills": [
+        { "name": "System Design", "icon": "lucide:workflow", "color": "#F97316" },
+        { "name": "Scalable Systems", "icon": "tabler:network", "color": "#0EA5E9" },
+        { "name": "Microservices", "icon": "lucide:boxes", "color": "#2563EB" },
+        { "name": "RESTful APIs", "icon": "tabler:api", "color": "#10B981" },
+        { "name": "Database Design", "icon": "mdi:database-cog", "color": "#D97706" },
+        { "name": "Authentication", "icon": "tabler:shield-lock", "color": "#16A34A" },
+        { "name": "Caching", "icon": "tabler:bolt", "color": "#EF4444" },
+        { "name": "MVC Architecture", "icon": "tabler:layout", "color": "#8B5CF6" }
+      ]
+    },
+    {
+      "name": "Databases",
+      "skills": [
+        { "name": "MongoDB", "icon": "simple-icons:mongodb", "color": "#47A248" },
+        { "name": "MySQL", "icon": "simple-icons:mysql", "color": "#4479A1" },
+        { "name": "PostgreSQL", "icon": "simple-icons:postgresql", "color": "#4169E1" },
+        { "name": "Redis", "icon": "simple-icons:redis", "color": "#FF4438" },
+        { "name": "Firebase", "icon": "simple-icons:firebase", "color": "#FFCA28" }
+      ]
+    },
+    {
+      "name": "Programming Languages",
+      "skills": [
+        { "name": "Python", "icon": "simple-icons:python", "color": "#3776AB" },
+        { "name": "TypeScript", "icon": "simple-icons:typescript", "color": "#3178C6" },
+        { "name": "Java", "icon": "mdi:language-java", "color": "#E76F00" },
+        { "name": "C", "icon": "simple-icons:c", "color": "#5C6BC0" },
+        { "name": "C++", "icon": "simple-icons:cplusplus", "color": "#00599C" },
+        { "name": "R", "icon": "simple-icons:r", "color": "#276DC3" },
+        { "name": "PHP", "icon": "simple-icons:php", "color": "#777BB4" },
+        { "name": "SQL", "icon": "mdi:database", "color": "#F29111" }
+      ]
+    },
+    {
+      "name": "Cloud, DevOps & Tools",
+      "skills": [
+        { "name": "Git", "icon": "simple-icons:git", "color": "#F05032" },
+        { "name": "GitHub", "icon": "simple-icons:github", "color": "var(--icon-github)" },
+        { "name": "Docker", "icon": "simple-icons:docker", "color": "#2496ED" },
+        { "name": "Linux", "icon": "simple-icons:linux", "color": "#FCC624" },
+        { "name": "Vercel", "icon": "simple-icons:vercel", "color": "var(--icon-vercel)" },
+        { "name": "Netlify", "icon": "simple-icons:netlify", "color": "#00C7B7" },
+        { "name": "VS Code", "icon": "simple-icons:visualstudiocode", "color": "#007ACC" },
+        { "name": "Postman", "icon": "simple-icons:postman", "color": "#FF6C37" },
+        { "name": "Chrome DevTools", "icon": "simple-icons:googlechrome", "color": "#4285F4" },
+        { "name": "Figma", "icon": "simple-icons:figma", "color": "#F24E1E" },
+        { "name": "Canva", "icon": "simple-icons:canva", "color": "#00C4CC" }
       ]
     }
   ]

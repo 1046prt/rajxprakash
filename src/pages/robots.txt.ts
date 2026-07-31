@@ -20,7 +20,7 @@ Allow: /robots.txt
 Allow: /sitemap.xml
 
 # Sitemap location
-Sitemap: https://prakashraj.info/sitemap.xml
+Sitemap: https://prakashraj.me/sitemap.xml
 
 # Crawl delay (optional, helps with server load)
 Crawl-delay: 1`;

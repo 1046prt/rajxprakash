@@ -16,7 +16,12 @@
   "dependencies": {
     "@astrojs/react": "^3.0.1",
     "@astrojs/tailwind": "^5.0.0",
+    "@iconify-json/lucide": "^1.2.121",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.92",
+    "@iconify-json/tabler": "^1.2.38",
     "astro": "^3.0.0",
+    "astro-icon": "^1.1.5",
     "gh-pages": "^5.0.0"
   },
   "devDependencies": {

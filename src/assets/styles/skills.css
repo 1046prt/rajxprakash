@@ -129,8 +129,10 @@
 .skill-icon {
   width: 48px;
   height: 48px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+  color: var(--text-light);
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {

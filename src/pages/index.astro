@@ -7,9 +7,11 @@ import '@/assets/styles/about.css';
 import '@/assets/styles/skills.css';
 import '@/assets/styles/education.css';
 import '@/assets/styles/experience.css';
+import '@/assets/styles/research.css';
 import '@/assets/styles/projects.css';
 import '@/assets/styles/contact.css';
 import ClickSound from '@/components/common/UISound.astro';
+import { Icon } from 'astro-icon/components';
 
 //JSON data
 import heroData from '@/data/hero.json';
@@ -17,6 +19,7 @@ import aboutData from '@/data/about.json';
 import skillsData from '@/data/skills.json';
 import educationData from '@/data/education.json';
 import experienceData from '@/data/experience.json';
+import researchData from '@/data/research.json';
 import projectsData from '@/data/projects.json';
 import contactData from '@/data/contact.json';
 
@@ -51,13 +54,13 @@ const meta = {
       jobTitle: 'Data Scientist & Web Developer',
       description:
         'Passionate full stack developer specializing in modern web technologies and data science',
-      url: 'https://prakashraj.info',
-      image: 'https://prakashraj.info/assets/images/PR.png',
+      url: 'https://prakashraj.me',
+      image: 'https://prakashraj.me/assets/images/PR.png',
       sameAs: [
         'https://linkedin.com/in/1046prt',
         'https://github.com/1046prt',
-        'https://x.com/1046prt',
-        'https://www.kaggle.com/prt1046',
+        'https://medium.com/@1046prt',
+        'https://www.researchgate.net/profile/Prakash-Raj-18',
       ],
       knowsAbout: [
         'Data Science',
@@ -77,7 +80,7 @@ const meta = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://prakashraj.info',
+          item: 'https://prakashraj.me',
         },
       ],
     },
@@ -119,7 +122,7 @@ const meta = {
             heroData.socialLinks &&
               Object.entries(heroData.socialLinks).map(([key, social]) => (
                 <a href={social.url} target="_blank" class="social-icon">
-                  <i class={social.icon} />
+                  <Icon name={social.icon} />
                 </a>
               ))
           }
@@ -249,6 +252,56 @@ const meta = {
     </div>
   </section>
 
+  {/* Research Section */}
+  <section id="research" class="research scroll-offset">
+    <div class="container">
+      <div class="section-header">
+        <h2>{researchData.title} <span class="highlight">{researchData.highlight}</span></h2>
+        <div class="underline"></div>
+      </div>
+      <div class="research-content">
+        {
+          researchData.papers.map((paper) => (
+            <article class="research-card">
+              <div class="research-card-header">
+                <span class="research-badge">
+                  <Icon name="mdi:sigma" />
+                  {paper.badge || 'Mathematics'}
+                </span>
+                <span class="research-year">{paper.year}</span>
+              </div>
+              <h3 class="research-title">{paper.title}</h3>
+              <p
+                class="research-authors"
+                set:html={paper.authors
+                  .map(
+                    (author) =>
+                      `${author.name}${author.affiliationIndex ? `<sup>${author.affiliationIndex}</sup>` : ''}`
+                  )
+                  .join(', ')}
+              />
+              <p class="research-affiliation">{paper.affiliations}</p>
+              <p class="research-abstract">{paper.abstract}</p>
+              <div class="research-keywords">
+                {paper.keywords.map((keyword) => (
+                  <span class="keyword-tag">{keyword}</span>
+                ))}
+              </div>
+              <a
+                href={paper.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn primary-btn"
+              >
+                Read Full Paper
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   {/* Projects Section */}
   <section id="projects" class="projects scroll-offset">
     <div class="container">
@@ -335,7 +388,7 @@ const meta = {
             {
               contactData.socialLinks.map((social) => (
                 <a href={social.url} target="_blank" class="social-icon-large">
-                  <i class={social.icon} aria-hidden="true" />
+                  <Icon name={social.icon} aria-hidden="true" />
                 </a>
               ))
             }
